@@ -1,9 +1,15 @@
 <template>
-    <div>Hello</div>
+    <logo />
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from '@nuxtjs/composition-api';
+import Logo from '~/components/logo/logo.vue';
 
-export default Vue.extend({});
+export default defineComponent({
+    name: 'Index',
+    components: {
+        Logo,
+    },
+});
 </script>
