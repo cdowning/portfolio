@@ -1,9 +1,7 @@
 import { defineComponent } from '@nuxtjs/composition-api';
 
-const Header = defineComponent({
-    name: 'Header',
+export default defineComponent({
+    name: 'HeaderBar',
     props: {},
     computed: {},
 });
-
-export default Header;
