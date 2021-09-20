@@ -4,34 +4,28 @@
         <!-- Header container - background -->
         <header class="header w-full bg-tan-90 sm:p-2 lg:py-4">
             <!-- Header content -->
-            <div class="lg:w-10/12 m-auto flex items-center">
+            <div class="md:container md:mx-auto flex items-center">
                 <logo />
-                <nav class="text-white">
+                <nav class="text-white flex-grow">
                     <ol>
                         <li>Hello</li>
                     </ol>
                 </nav>
+                <div class="color-mode">
+                    <svg-icon
+                        :class="[
+                            'fill-current',
+                            'text-white',
+                            'cursor-pointer',
+                        ]"
+                        :name="colorIcon"
+                        width="24"
+                        height="24"
+                        @click="onUpdateTheme"
+                    />
+                </div>
             </div>
         </header>
-
-        <div @click="onUpdateTheme">Theme: {{ $colorMode.preference }}</div>
-
-        <svg-icon name="sun" />
-
-        <!-- <ColorScheme placeholder="..." tag="span">
-            Color mode: <b>{{ $colorMode.preference }}</b>
-            <span v-if="$colorMode.preference === 'system'"
-                >(<i>{{ $colorMode.value }}</i> mode detected)</span
-            >
-        </ColorScheme>
-        <div>
-            <h1>Color mode: {{ $colorMode.value }}</h1>
-            <select v-model="$colorMode.preference">
-                <option value="system">System</option>
-                <option value="light">Light</option>
-                <option value="dark">Dark</option>
-            </select>
-        </div> -->
     </div>
 </template>
 
@@ -44,9 +38,19 @@ export default defineComponent({
     components: {
         Logo,
     },
+    data() {
+        return {};
+    },
+    computed: {
+        colorIcon() {
+            const icon = this.$colorMode.value === 'dark' ? 'moon' : 'sun';
+            return icon;
+        },
+    },
     methods: {
         onUpdateTheme() {
-            console.log(this.$colorMode);
+            const color = this.$colorMode.value === 'dark' ? 'light' : 'dark';
+            this.$colorMode.value = color;
         },
     },
 });

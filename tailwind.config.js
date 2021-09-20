@@ -1,5 +1,7 @@
 const colors = require('./colors.ts');
 
+// Dark mode guide: https://color-mode.nuxtjs.org/#tailwind-dark-mode-plugin
+
 module.exports = {
     mode: 'jit',
     purge: [],

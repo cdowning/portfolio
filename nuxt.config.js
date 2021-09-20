@@ -42,6 +42,10 @@ export default {
         defaultSprite: 'icon-sprite',
     },
 
+    server: {
+        port: 8000, // default is 3000
+    },
+
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
     buildModules: [
         // https://go.nuxtjs.dev/typescript
