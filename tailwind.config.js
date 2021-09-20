@@ -5,7 +5,7 @@ const colors = require('./colors.ts');
 module.exports = {
     mode: 'jit',
     purge: [],
-    darkMode: false, // or 'media' or 'class'
+    darkMode: 'class', // or 'media' or 'class'
     theme: {
         colors: {
             white: colors.white,
@@ -13,6 +13,12 @@ module.exports = {
             blueGray: colors.blueGray,
             tan: colors.tan,
             green: colors.green,
+            gray: colors.gray,
+            yellow: colors.yellow,
+            midnight: colors.midnight,
+            olive: colors.olive,
+            blush: colors.blush,
+            cream: colors.cream,
         },
         extend: {},
     },

@@ -9,7 +9,7 @@ const Logo = defineComponent({
         },
         src: {
             type: String,
-            default: 'caitlin-hawley.svg',
+            default: 'caitlin-hawley-light.svg',
         },
         alt: {
             type: String,

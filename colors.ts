@@ -5,6 +5,16 @@ module.exports = {
     black: '#000000',
     white: '#ffffff',
     olive: '#9C9F4B',
+
+    midnight: '#073B4C',
+
+    // https://coolors.co/cfdbd5-e8eddf-f5cb5c-242423-333533
+    yellow: '#f5cb5c',
+    gray: {
+        40: '#333533',
+        50: '#242423',
+    },
+
     forestGreen: '#474F1D',
     cream: '#FCE8DA',
     blush: '#F9BFB2',

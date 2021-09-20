@@ -17,8 +17,8 @@ export default {
         link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
 
-    // Global CSS: https://go.nuxtjs.dev/config-css
-    css: [],
+    // Global CSS: https://nuxtjs.org/docs/features/configuration
+    css: ['./assets/scss/variables', './assets/scss/main'],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [],
@@ -26,16 +26,9 @@ export default {
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: false, // TODO: Come back
 
-    // colorMode: {
-    //     preference: 'dark', // default value of $colorMode.preference
-    //     fallback: 'light', // fallback value if not system preference found
-    //     hid: 'nuxt-color-mode-script',
-    //     // globalName: '__NUXT_COLOR_MODE__',
-    //     // componentName: 'ColorScheme',
-    //     classPrefix: '',
-    //     classSuffix: '-mode',
-    //     storageKey: 'nuxt-color-mode',
-    // },
+    colorMode: {
+        classSuffix: '-mode',
+    },
 
     svgSprite: {
         input: '~/assets/icons/svg',

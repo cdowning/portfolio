@@ -1,0 +1,19 @@
+:root {
+    --color: #243746;
+    --color-primary: #158876;
+    --color-secondary: #0e2233;
+    --bg: #f3f5f4;
+    --bg-secondary: #fff;
+    --border-color: #ddd;
+}
+
+.dark-mode {
+    --color: #f5cb5c;
+    --color-primary: #41b38a;
+    --color-secondary: #fdf9f3;
+    --bg: #242423;
+    --bg-secondary: #071521;
+    --border-color: #0d2538;
+}
+
+// $bg: var(--bg);
