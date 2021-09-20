@@ -4,7 +4,7 @@ export default {
 
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: 'portfolio',
+        title: 'Caitlin Hawley',
         meta: [
             { charset: 'utf-8' },
             {
@@ -26,6 +26,22 @@ export default {
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: false, // TODO: Come back
 
+    // colorMode: {
+    //     preference: 'dark', // default value of $colorMode.preference
+    //     fallback: 'light', // fallback value if not system preference found
+    //     hid: 'nuxt-color-mode-script',
+    //     // globalName: '__NUXT_COLOR_MODE__',
+    //     // componentName: 'ColorScheme',
+    //     classPrefix: '',
+    //     classSuffix: '-mode',
+    //     storageKey: 'nuxt-color-mode',
+    // },
+
+    svgSprite: {
+        input: '~/assets/icons/svg',
+        defaultSprite: 'icon-sprite',
+    },
+
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
     buildModules: [
         // https://go.nuxtjs.dev/typescript
@@ -36,6 +52,8 @@ export default {
         '@nuxtjs/tailwindcss',
         // https://color-mode.nuxtjs.org/
         '@nuxtjs/color-mode',
+        // https://github.com/nuxt-community/svg-sprite-module
+        '@nuxtjs/svg-sprite',
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules

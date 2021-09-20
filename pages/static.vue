@@ -13,6 +13,25 @@
                 </nav>
             </div>
         </header>
+
+        <div @click="onUpdateTheme">Theme: {{ $colorMode.preference }}</div>
+
+        <svg-icon name="sun" />
+
+        <!-- <ColorScheme placeholder="..." tag="span">
+            Color mode: <b>{{ $colorMode.preference }}</b>
+            <span v-if="$colorMode.preference === 'system'"
+                >(<i>{{ $colorMode.value }}</i> mode detected)</span
+            >
+        </ColorScheme>
+        <div>
+            <h1>Color mode: {{ $colorMode.value }}</h1>
+            <select v-model="$colorMode.preference">
+                <option value="system">System</option>
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
+        </div> -->
     </div>
 </template>
 
@@ -24,6 +43,11 @@ export default defineComponent({
     name: 'Index',
     components: {
         Logo,
+    },
+    methods: {
+        onUpdateTheme() {
+            console.log(this.$colorMode);
+        },
     },
 });
 </script>
