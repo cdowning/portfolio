@@ -1,3 +1,5 @@
+// https://nuxtjs.org/tutorials/going-dark-with-nuxtjs-color-mode/
+
 :root {
     --color: #243746;
     --color-primary: #158876;
@@ -8,7 +10,7 @@
 }
 
 .dark-mode {
-    --color: #f5cb5c;
+    --color: #e8eddf;
     --color-primary: #41b38a;
     --color-secondary: #fdf9f3;
     --bg: #242423;
@@ -16,4 +18,4 @@
     --border-color: #0d2538;
 }
 
-// $bg: var(--bg);
+$bg: var(--bg);

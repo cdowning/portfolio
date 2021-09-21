@@ -11,6 +11,14 @@ const Logo = defineComponent({
             type: String,
             default: 'caitlin-hawley-light.svg',
         },
+        width: {
+            type: Number,
+            default: 155,
+        },
+        height: {
+            type: Number,
+            default: 70,
+        },
         alt: {
             type: String,
             default: '',

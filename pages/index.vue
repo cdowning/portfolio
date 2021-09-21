@@ -5,23 +5,28 @@
         <header class="header w-full">
             <!-- <header class="header w-full p-3 md:px-0 md:py-6"> -->
             <!-- Header content -->
-            <div class="md:container md:mx-auto p-3 md:py-6 flex items-center">
-                <logo :src="logoSrc" />
-                <nav class="flex-grow mx-4">
-                    <ol class="text-right">
-                        <li class="inline-block mx-2">About</li>
-                        <li class="inline-block mx-2">My Skills</li>
-                        <li class="inline-block mx-2">Portfolio</li>
-                        <li class="inline-block mx-2">Contact</li>
+            <div
+                class="
+                    md:container md:mx-auto md:flex-nowrap
+                    p-3
+                    md:py-6
+                    flex
+                    items-center
+                    flex-wrap
+                "
+            >
+                <logo class="flex-grow sm:flex-grow-0 order-1" :src="logoSrc" />
+                <nav class="flex-grow w-full order-3 sm:w-auto sm:order-2">
+                    <ol class="sm:text-right">
+                        <li class="inline-block mx-1">About</li>
+                        <li class="inline-block mx-1">My Skills</li>
+                        <li class="inline-block mx-1">Portfolio</li>
+                        <li class="inline-block mx-1">Contact</li>
                     </ol>
                 </nav>
-                <div class="color-mode">
+                <div class="color-mode order-2 sm:order-3">
                     <svg-icon
-                        :class="[
-                            'fill-current',
-                            'text-white',
-                            'cursor-pointer',
-                        ]"
+                        :class="['theme-icon', 'cursor-pointer']"
                         :name="colorIcon"
                         width="24"
                         height="24"
@@ -43,9 +48,7 @@ export default defineComponent({
         Logo,
     },
     data() {
-        return {
-            // colorMode: this.$colorMode.value,
-        };
+        return {};
     },
     computed: {
         colorIcon() {

@@ -1,6 +1,7 @@
 export default {
     // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-    ssr: false,
+    // ssr: false,
+    target: 'static',
 
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
@@ -47,10 +48,10 @@ export default {
         '@nuxtjs/composition-api/module',
         // https://go.nuxtjs.dev/tailwindcss
         '@nuxtjs/tailwindcss',
-        // https://color-mode.nuxtjs.org/
-        '@nuxtjs/color-mode',
         // https://github.com/nuxt-community/svg-sprite-module
         '@nuxtjs/svg-sprite',
+        // https://image.nuxtjs.org/
+        '@nuxt/image',
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
@@ -59,6 +60,8 @@ export default {
         '@nuxtjs/axios',
         // https://go.nuxtjs.dev/pwa
         '@nuxtjs/pwa',
+        // https://color-mode.nuxtjs.org/
+        '@nuxtjs/color-mode',
     ],
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
