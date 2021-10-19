@@ -38,35 +38,5 @@
     </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
-import Logo from '~/components/logo/logo.vue';
-
-export default defineComponent({
-    name: 'Index',
-    components: {
-        Logo,
-    },
-    data() {
-        return {};
-    },
-    computed: {
-        colorIcon() {
-            // If no theme is set in settings, defaults to 'light'
-            const icon = this.$colorMode.value === 'dark' ? 'moon' : 'sun';
-            return icon;
-        },
-        logoSrc() {
-            return `caitlin-hawley-${this.$colorMode.value}.svg`;
-        },
-    },
-    methods: {
-        onUpdateTheme() {
-            const color = this.$colorMode.value === 'dark' ? 'light' : 'dark';
-            this.$colorMode.value = color;
-        },
-    },
-});
-</script>
-
+<script lang="ts" src="./ts/index.ts"></script>
 <style lang="scss"></style>
