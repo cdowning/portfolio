@@ -66,6 +66,19 @@ export default {
         '@nuxtjs/color-mode',
     ],
 
+    // https://storybook.nuxtjs.org/setup
+    storybook: {
+        // NOTE: The order of these addons is the order they will appear in the tabs
+        addons: [
+            // '@storybook/addon-controls',
+            // '@storybook/addon-actions',
+            // '@storybook/addon-a11y',
+        ],
+        modules: {
+            exclude: ['@nuxtjs/svg-sprite'],
+        },
+    },
+
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
     axios: {},
 
