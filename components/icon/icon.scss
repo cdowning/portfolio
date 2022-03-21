@@ -1,0 +1,15 @@
+.icon {
+    color: var(--color);
+
+    svg {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .svg-icon {
+        stroke: none;
+        fill: currentColor;
+        height: 100%;
+        width: auto;
+    }
+}

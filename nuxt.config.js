@@ -20,13 +20,16 @@ export default {
     },
 
     // Global CSS: https://nuxtjs.org/docs/features/configuration
-    css: ['./assets/scss/variables', './assets/scss/main'],
+    css: [
+        './assets/scss/variables',
+        './assets/scss/fonts',
+        './assets/scss/main',
+    ],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
-    // components: true,
     components: [{ path: '~/components', extensions: ['vue'] }],
 
     colorMode: {
@@ -64,7 +67,20 @@ export default {
         '@nuxtjs/pwa',
         // https://color-mode.nuxtjs.org/
         '@nuxtjs/color-mode',
+        // https://github.com/vanhoofmaarten/nuxt-mq
+        'nuxt-mq',
     ],
+
+    mq: {
+        defaultBreakpoint: 'sm',
+        breakpoints: {
+            sm: 640,
+            md: 768,
+            lg: 1024,
+            xl: 1280,
+            '2xl': 1536,
+        },
+    },
 
     // https://storybook.nuxtjs.org/setup
     storybook: {

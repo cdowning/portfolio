@@ -3,7 +3,10 @@ import { defineComponent } from '@nuxtjs/composition-api';
 export default defineComponent({
     name: 'Index',
     data() {
-        return {};
+        return {
+            mobileMenu: false,
+            icon: 'menu',
+        };
     },
     computed: {
         colorIcon() {
@@ -14,11 +17,21 @@ export default defineComponent({
         logoSrc() {
             return `caitlin-hawley-${this.$colorMode.value}.svg`;
         },
+        mobileIcon() {
+            return this.icon === 'menu' ? 'menu' : 'close';
+        },
+    },
+    mounted() {
+        console.log(this.$colorMode.value);
     },
     methods: {
         onUpdateTheme() {
             const color = this.$colorMode.value === 'dark' ? 'light' : 'dark';
             this.$colorMode.value = color;
+        },
+        onMobileMenu() {
+            this.mobileMenu = !this.mobileMenu;
+            this.icon = this.icon === 'menu' ? 'close' : 'menu';
         },
     },
 });
