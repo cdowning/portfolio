@@ -2,6 +2,8 @@ const colors = require('./colors.ts');
 
 // Dark mode guide: https://color-mode.nuxtjs.org/#tailwind-dark-mode-plugin
 
+// If I need to reference variables in TS - https://tailwindcss.com/docs/configuration#referencing-in-java-script
+
 module.exports = {
     // mode: 'jit',
     purge: [],
@@ -20,22 +22,6 @@ module.exports = {
             blush: colors.blush,
             cream: colors.cream,
         },
-        // screens: {
-        //     '2xl': { max: '1535px' },
-        //     // => @media (max-width: 1535px) { ... }
-
-        //     xl: { max: '1279px' },
-        //     // => @media (max-width: 1279px) { ... }
-
-        //     lg: { max: '1023px' },
-        //     // => @media (max-width: 1023px) { ... }
-
-        //     md: { max: '767px' },
-        //     // => @media (max-width: 767px) { ... }
-
-        //     sm: { max: '639px' },
-        //     // => @media (max-width: 639px) { ... }
-        // },
         extend: {},
     },
     variants: {

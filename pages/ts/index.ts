@@ -6,12 +6,14 @@ export default defineComponent({
         return {
             mobileMenu: false,
             icon: 'menu',
+            switchColorTheme:
+                this.$colorMode.value === 'dark' ? 'light' : 'dark',
         };
     },
     computed: {
         colorIcon() {
             // If no theme is set in settings, defaults to 'light'
-            const icon = this.$colorMode.value === 'dark' ? 'moon' : 'sun';
+            const icon = this.$colorMode.value === 'dark' ? 'sun' : 'moon';
             return icon;
         },
         logoSrc() {

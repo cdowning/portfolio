@@ -1,22 +1,113 @@
 // https://nuxtjs.org/tutorials/going-dark-with-nuxtjs-color-mode/
 // https://stackoverflow.com/questions/63743786/using-scss-variables-with-nuxt-color-mode
 
+// Color Shades:
+// https://mdigi.tools/color-shades/#033f63
+// https://maketintsandshades.com/#b5b682
+// https://noeldelgado.github.io/shadowlord/#033f63
+// https://www.shadegenerator.com/B5B682
+
+// Old
+$color-navy-10: #095e91;
+$color-navy-20: #054d78;
+$color-navy-30: #033f63;
+$color-navy-40: #012f4b;
+$color-navy-50: #001c2d;
+
+$color-teal-10: #719fa5;
+$color-teal-20: #478088;
+$color-teal-30: #28656e;
+$color-teal-40: #134f57;
+$color-teal-50: #03353c;
+
+$color-green-10: #d0d8d3;
+$color-green-20: #a2b4a8;
+$color-green-30: #7c9885;
+$color-green-40: #5c8068;
+$color-green-50: #40684e;
+
+$color-sage: #b5b682;
+
+$color-yellow-10: #fff6e3;
+$color-yellow-20: #fee3ab;
+$color-yellow-30: #fedc97;
+$color-yellow-40: #fdbd3b;
+$color-yellow-50: #c48402;
+
+$color-white: #ffffff;
+$color-black: #000000;
+
+// New
+$color-blush: #f9bfb2;
+$color-pink: #d8a1ab; //#d0a3ab;
+$color-lilac: #af88a0; // #a8899f
+$color-violet: #807385;
+$color-indigo: #545577;
+$color-slate-gray: #2f4858;
+
+$color-yellow-00: #fbeabe;
+$color-yellow-10: #f9e09d;
+$color-yellow-20: #f8db8d;
+$color-yellow-30: #f7d57d;
+$color-yellow-40: #f5cb5c; // primary
+
+$color-lime: #9ebd5e;
+$color-green: #55a572;
+$color-teal: #1b6874;
+$color-midnight: #1c2b35; // #082a2e;
+
 :root {
-    --color: #243746;
-    --color-primary: #158876;
-    --color-secondary: #0e2233;
     --bg: #f3f5f4;
-    --bg-secondary: #fff;
-    --border-color: #ddd;
+    --bg-primary: #fedc97;
+    --bg-secondary: #fedc97;
+
+    --color: #012f4b;
+    --color-primary: #28666e;
+    --color-secondary: #7c9885;
+
+    // Buttons
+    --btn-primary: #f9bfb2;
+    --btn-secondary: #f5cb5c;
+    --btn-text-primary: #2f4858;
+
+    --border-color: #b5b682;
+    --color-navigation: #28656e;
 }
+// :root {
+//     --color: #243746;
+//     --color-primary: #158876;
+//     --color-secondary: #0e2233;
+//     --bg: #f3f5f4;
+//     --bg-secondary: #fff;
+//     --border-color: #ddd;
+// }
 
 .dark-mode {
-    --color: #e8eddf;
-    --color-primary: #41b38a;
-    --color-secondary: #fdf9f3;
-    --bg: #242423;
-    --bg-secondary: #071521;
+    // Backgrounds
+    --bg: #2f4858;
+    --bg-primary: #2f4858;
+    --bg-secondary: #1c2b35;
+    // Text
+    --color: #f5cb5c;
+    --color-primary: #f9bfb2;
+    --color-secondary: #f9e09d;
+    // Buttons
+    --btn-primary: #f9bfb2;
+    --btn-secondary: #f5cb5c;
+    --btn-text-primary: #2f4858;
+    // Other
     --border-color: #0d2538;
+    --color-navigation: #fee3ab;
 }
+// .dark-mode {
+//     --color: #e8eddf;
+//     --color-primary: #41b38a;
+//     --color-secondary: #fdf9f3;
+//     --bg: #242423;
+//     --bg-secondary: #071521;
+//     --border-color: #0d2538;
+//     --color-navigation: #fee3ab;
+//     --btn-primary: #fedc97;
+// }
 
 $bg: var(--bg);

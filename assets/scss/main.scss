@@ -13,6 +13,33 @@ body {
     transition: background-color 0.3s;
 }
 
+nav,
+.menu {
+    color: var(--color-navigation);
+}
+
 .theme-icon {
     fill: var(--color);
+}
+
+// https://codepen.io/pugson/pen/EwmKJp
+.text-highlight {
+    font-style: normal;
+    border-radius: 1em 0 1em 0;
+    background-image: linear-gradient(
+        -100deg,
+        rgba(249, 191, 178, 0.15) 0%,
+        rgba(249, 191, 178, 1) 5%,
+        rgba(249, 191, 178, 1) 85%,
+        rgba(249, 191, 178, 0.25) 100%
+    );
+    // background-image: linear-gradient(
+    //     -100deg,
+    //     rgba(255, 250, 150, 0.15),
+    //     rgba(255, 250, 150, 0.8) 100%,
+    //     rgba(255, 250, 150, 0.25)
+    // );
+}
+.highlight {
+    background: url(//s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=ffff43);
 }

@@ -1,20 +1,25 @@
 // Check out this color scheme
 // https://www.canva.com/colors/color-palettes/desert-sunset/
+// https://coolors.co/cfdbd5-e8eddf-f5cb5c-242423-333533
+
+// bg-yellow #f5cb5c
+// bg-midnight #073B4C
+// bg-olive #9C9F4B
+// bg-blush #F9BFB2
+// bg-cream #FCE8DA
 
 module.exports = {
     black: '#000000',
     white: '#ffffff',
+
+    // Old
     olive: '#9C9F4B',
-
     midnight: '#073B4C',
-
-    // https://coolors.co/cfdbd5-e8eddf-f5cb5c-242423-333533
     yellow: '#f5cb5c',
     gray: {
         40: '#333533',
         50: '#242423',
     },
-
     forestGreen: '#474F1D',
     cream: '#FCE8DA',
     blush: '#F9BFB2',

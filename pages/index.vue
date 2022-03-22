@@ -41,19 +41,40 @@
                     <li>Skills</li>
                     <li>Portfolio</li>
                     <li>Contact</li>
-                    <div class="color-mode flex">
+                    <div
+                        class="color-mode flex cursor-pointer"
+                        @click="onUpdateTheme"
+                    >
                         <svg-icon
-                            :class="['theme-icon', 'cursor-pointer pr-2']"
+                            class="theme-icon cursor-pointer pr-2"
                             :name="colorIcon"
                             width="24"
                             height="24"
-                            @click="onUpdateTheme"
                         />
-                        Switch to {{ $colorMode.value }} theme
+                        Switch to {{ switchColorTheme }} theme
                     </div>
                 </ul>
             </div>
         </header>
+        <div class="md:container md:mx-auto p-3 md:py-6">
+            <p class="w-full">
+                This is a <span class="text-highlight">test</span>
+            </p>
+            <p class="w-full" lazy>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries,
+                <span class="highlight">
+                    also the leap into electronic typesetting, remaining
+                    essentially unchanged</span
+                >. It was popularised in the 1960s with the release of Letraset
+                sheets containing Lorem Ipsum passages, and more recently with
+                desktop publishing software like Aldus PageMaker including
+                versions of Lorem Ipsum.
+            </p>
+        </div>
     </div>
 </template>
 
