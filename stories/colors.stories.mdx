@@ -1,0 +1,64 @@
+<!-- Colors.stories.mdx -->
+
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
+
+import tailwindConfig from '~/tailwind.config.js';
+export const tailwindColors = tailwindConfig.theme.colors;
+
+<Meta title="Design System/Colors" />
+
+# UI Color Palette
+
+Our color palette is essential to communicating who we are as a brand. Our UI color palette is composed of a scalable color system that allows harmonic combinations and a consistent feel throughout the application.
+
+### Guidelines
+
+Primary Colors are used frequently across the UI and communicates a distinct identity to the product and brand. Using brand colors as the primary UI colors strengthens brand awareness.
+
+Neutrals are dark to light neutral tones, usually shades of gray, to support the primary colors. They are used for backgrounds, text colors, various components and form the majority of the UI.
+
+Secondary Colors are typically used sparingly to highlight or complement the primary colors. For Quore's purposes, they may also be used to signify a specific app type, feature, tag, category, etc.
+
+Semantic Colors are used for message handling, form validations, or to highlight an important status. They should be used to communicate a purpose and not for decoration.
+
+<ColorPalette>
+    <ColorItem
+        title="Quore Green"
+        subtitle="Primary"
+        colors={tailwindColors.green}
+    />
+    <ColorItem
+        title="Blue Sky"
+        subtitle="Primary"
+        colors={tailwindColors.blue}
+    />
+    <ColorItem
+        title="Inkwell"
+        subtitle="Neutrals"
+        colors={tailwindColors.inkwell}
+    />
+    <ColorItem title="Gray" subtitle="Neutrals" colors={tailwindColors.gray} />
+    <ColorItem title="Red" subtitle="Secondary" colors={tailwindColors.red} />
+    <ColorItem title="Pink" subtitle="Secondary" colors={tailwindColors.pink} />
+    <ColorItem
+        title="Purple"
+        subtitle="Secondary"
+        colors={tailwindColors.purple}
+    />
+    <ColorItem
+        title="Maroon"
+        subtitle="Secondary"
+        colors={tailwindColors.maroon}
+    />
+    <ColorItem
+        title="Yellow"
+        subtitle="Secondary"
+        colors={tailwindColors.yellow}
+    />
+    <ColorItem
+        title="Orange"
+        subtitle="Secondary"
+        colors={tailwindColors.orange}
+    />
+    <ColorItem title="Teal" subtitle="Secondary" colors={tailwindColors.teal} />
+</ColorPalette>

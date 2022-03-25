@@ -37,13 +37,24 @@ $color-yellow-50: #c48402;
 $color-white: #ffffff;
 $color-black: #000000;
 
-// New
+///////// New
 $color-blush: #f9bfb2;
 $color-pink: #d8a1ab; //#d0a3ab;
 $color-lilac: #af88a0; // #a8899f
 $color-violet: #807385;
 $color-indigo: #545577;
-$color-slate-gray: #2f4858;
+
+$color-green: #55a572;
+$color-teal: #1b6874;
+$color-midnight: #1c2b35; // #082a2e;
+
+$color-slate-gray-00: #d5dade;
+$color-slate-gray-10: #97a4ac;
+$color-slate-gray-20: #596d79;
+$color-slate-gray-30: #2f4858; // primary
+$color-slate-gray-40: #263a46;
+$color-slate-gray-50: #1c2b35;
+$color-slate-gray-60: #131d23;
 
 $color-yellow-00: #fbeabe;
 $color-yellow-10: #f9e09d;
@@ -51,10 +62,12 @@ $color-yellow-20: #f8db8d;
 $color-yellow-30: #f7d57d;
 $color-yellow-40: #f5cb5c; // primary
 
-$color-lime: #9ebd5e;
-$color-green: #55a572;
-$color-teal: #1b6874;
-$color-midnight: #1c2b35; // #082a2e;
+$color-lime-00: #d8e5bf;
+$color-lime-10: #c5d79e;
+$color-lime-20: #b1ca7e; // #9BDE7E
+$color-lime-30: #9ebd5e; // primary
+$color-lime-40: #8eaa55;
+$color-lime-50: #7e974b;
 
 :root {
     --bg: #f3f5f4;
@@ -82,6 +95,7 @@ $color-midnight: #1c2b35; // #082a2e;
 //     --border-color: #ddd;
 // }
 
+// Tertiary
 .dark-mode {
     // Backgrounds
     --bg: #2f4858;

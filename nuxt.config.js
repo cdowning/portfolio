@@ -84,6 +84,12 @@ export default {
 
     // https://storybook.nuxtjs.org/setup
     storybook: {
+        stories: [
+            '~/components/**/*.stories.@(js|jsx|ts|tsx)',
+            '~/components/**/*.stories.mdx',
+            '~/stories/*.stories.@(js|jsx|ts|tsx)',
+            '~/stories/*.stories.mdx',
+        ],
         // NOTE: The order of these addons is the order they will appear in the tabs
         addons: [
             // '@storybook/addon-controls',
