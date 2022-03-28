@@ -1,5 +1,5 @@
-@import './variables';
-@import './fonts';
+// @import './variables';
+// @import './fonts';
 
 html {
     height: 100%;
@@ -10,8 +10,8 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.75;
-    background-color: var(--bg);
-    color: var(--color);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     transition: background-color 0.3s;
 }
 
@@ -22,7 +22,7 @@ nav,
 }
 
 .theme-icon {
-    fill: var(--color);
+    fill: var(--text-primary);
 }
 
 // https://codepen.io/pugson/pen/EwmKJp

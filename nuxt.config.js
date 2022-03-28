@@ -21,7 +21,7 @@ export default {
 
     // Global CSS: https://nuxtjs.org/docs/features/configuration
     css: [
-        './assets/scss/variables',
+        './assets/css/tailwind.css',
         './assets/scss/fonts',
         './assets/scss/main',
     ],
@@ -80,6 +80,13 @@ export default {
             xl: 1280,
             '2xl': 1536,
         },
+    },
+
+    tailwindcss: {
+        cssPath: '~/assets/css/tailwind.css',
+        exposeConfig: true,
+        config: {},
+        injectPosition: 0,
     },
 
     // https://storybook.nuxtjs.org/setup

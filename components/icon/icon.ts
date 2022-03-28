@@ -5,7 +5,7 @@ import SvgSprite from '@/assets/sprite/gen/icon-sprite.svg';
 const Icon = defineComponent({
     name: 'Icon',
     props: {
-        name: {
+        icon: {
             type: String,
             default: '',
             required: true,
@@ -30,7 +30,7 @@ const Icon = defineComponent({
     },
     computed: {
         iconPath(): string {
-            return `${SvgSprite}#i-${this.name}`;
+            return `${SvgSprite}#i-${this.icon}`;
         },
     },
 });

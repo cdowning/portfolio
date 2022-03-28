@@ -1,6 +1,6 @@
 <template>
     <span
-        v-if="name"
+        v-if="icon"
         :class="[
             'icon',
             { [`text-${color}`]: color },

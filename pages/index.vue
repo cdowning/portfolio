@@ -6,10 +6,10 @@
             <div
                 class="md:container md:mx-auto md:flex-nowrap p-3 md:py-6 flex items-center flex-wrap"
             >
-                <logo class="flex-grow" :src="logoSrc" />
+                <Logo class="flex-grow" :src="logoSrc" />
 
-                <icon
-                    :name="icon"
+                <Icon
+                    :icon="icon"
                     color="white"
                     class="cursor-pointer z-10 md:hidden"
                     @click.native="onMobileMenu"

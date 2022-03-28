@@ -7,6 +7,9 @@
 // https://noeldelgado.github.io/shadowlord/#033f63
 // https://www.shadegenerator.com/B5B682
 
+// How to handle color mode: https://mohitchandani.medium.com/dark-theme-with-nuxt-js-e74e78491d0c
+// Halfway down: https://mayashavin.com/articles/dark-theme-tailwind-nuxt
+
 // Old
 $color-navy-10: #095e91;
 $color-navy-20: #054d78;
@@ -113,6 +116,7 @@ $color-lime-50: #7e974b;
     --border-color: #0d2538;
     --color-navigation: #fee3ab;
 }
+
 // .dark-mode {
 //     --color: #e8eddf;
 //     --color-primary: #41b38a;
@@ -123,5 +127,3 @@ $color-lime-50: #7e974b;
 //     --color-navigation: #fee3ab;
 //     --btn-primary: #fedc97;
 // }
-
-$bg: var(--bg);

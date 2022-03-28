@@ -9,19 +9,6 @@ module.exports = {
     purge: [],
     darkMode: 'class', // or 'media' or 'class'
     theme: {
-        colors: {
-            white: colors.white,
-            black: colors.black,
-            blueGray: colors.blueGray,
-            tan: colors.tan,
-            green: colors.green,
-            gray: colors.gray,
-            yellow: colors.yellow,
-            midnight: colors.midnight,
-            olive: colors.olive,
-            blush: colors.blush,
-            cream: colors.cream,
-        },
         fontFamily: {
             // https://tailwindcss.com/docs/font-family
             poppins: ['Poppins', '-apple-system', 'sans-serif'],
@@ -51,10 +38,29 @@ module.exports = {
             '3xl': '3.052rem', // 48.83px
             '4xl': '3.815rem', // 61.04px
         },
-        extend: {},
+        extend: {
+            backgroundColor: {
+                primary: 'var(--bg-primary)',
+                secondary: 'var(--btn-secondary)',
+                // secondary: withOpacityValue('--bg-secondary'),
+            },
+        },
+        // https://github.com/rogden/tailwind-config-viewer#themereplacements
+        configViewer: {
+            themeReplacements: {
+                'var(--bg-primary)': '#fedc97',
+            },
+        },
     },
     variants: {
         extend: {},
     },
     plugins: [],
+    content: [
+        `components/**/*.{vue,js}`,
+        `layouts/**/*.vue`,
+        `pages/**/*.vue`,
+        `plugins/**/*.{js,ts}`,
+        `nuxt.config.{js,ts}`,
+    ],
 };

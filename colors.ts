@@ -9,7 +9,7 @@
 // bg-cream #FCE8DA
 
 module.exports = {
-    black: '#000000',
+    black: 'rgb(0, 0, 0)',
     white: '#ffffff',
 
     // Old

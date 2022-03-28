@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* https://coolors.co/palette/f6bd60-f7ede2-f5cac3-84a59d-f28482 */
+/* https://coolors.co/palette/e9e9e1-90a9b0-cb9b9c-dfded8-3e3e3e */
+
+:root {
+    --bg-primary: #fffffe;
+    --bg-secondary: #b8c1ec;
+    --text-primary: #232946;
+    --text-secondary: #121629;
+    --btn-primary: #eebbc3;
+    --btn-secondary: #b8c1ec;
+    --link-primary: #232946;
+    --link-secondary: #232946;
+}
+
+.dark-mode {
+    --bg-primary: #232946;
+    --bg-secondary: #121629;
+    --text-primary: #fffffe;
+    --text-secondary: #b8c1ec;
+    --btn-primary: #eebbc3;
+    --btn-secondary: #b8c1ec;
+    --link-primary: #fffffe;
+    --link-secondary: #fffffe;
+}

@@ -1,7 +1,7 @@
 <template>
-    <button :class="['btn', ...buttonClasses]" :disabled="disabled">
-        <slot />
-        <q-icon v-if="icon" :icon="icon" />
+    <button :class="['btn flex', ...buttonClasses]" :disabled="disabled">
+        <Icon v-if="icon" :icon="icon" size="md" />
+        <span :class="['text', icon ? 'pl-3' : '']"><slot /></span>
     </button>
 </template>
 

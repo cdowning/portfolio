@@ -26,11 +26,11 @@ Button Styles
     // Color Status
     &.btn-primary {
         background-color: var(--btn-primary);
-        color: var(--btn-text-primary);
+        color: var(--bg-primary);
     }
     &.btn-secondary {
         background-color: var(--btn-secondary);
-        color: var(--btn-text-primary);
+        color: var(--bg-secondary);
     }
 
     // Outline Styles
@@ -40,12 +40,12 @@ Button Styles
         background-color: transparent;
 
         &.btn-primary {
-            border-color: var(--color-primary);
-            color: var(--color-primary);
+            border-color: var(--text-primary);
+            color: var(--text-primary);
         }
 
         &.btn-secondary {
-            border-color: var(--btn-secondary);
+            border-color: var(--text-secondary);
             color: var(--btn-secondary);
         }
     }

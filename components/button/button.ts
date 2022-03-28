@@ -1,7 +1,7 @@
-import { defineComponent } from '@nuxtjs/composition-api';
+import { defineComponent, computed } from '@nuxtjs/composition-api';
 
-const Btn = defineComponent({
-    name: 'Btn',
+const Button = defineComponent({
+    name: 'Button',
     props: {
         // Use tailwind bg-color class
         status: {
@@ -29,17 +29,26 @@ const Btn = defineComponent({
             default: false,
         },
     },
-    computed: {
-        buttonClasses(): any {
+    setup(props, context) {
+        // const hasIcon = computed(function () {
+        //     return !!context.slots.icon;
+        // });
+
+        const buttonClasses = computed(function () {
             return [
-                'btn-' + this.size,
-                { ['btn-' + this.status]: this.status },
-                { 'has-icon': !!this.icon },
-                { 'w-full': !!this.isFullWidth },
-                { 'btn-outlined': !!this.outlined },
+                'btn-' + props.size,
+                { ['btn-' + props.status]: props.status },
+                { 'has-icon': !!context.slots.icon },
+                { 'w-full': !!props.isFullWidth },
+                { 'btn-outlined': !!props.outlined },
             ];
-        },
+        });
+
+        return {
+            // hasIcon,
+            buttonClasses,
+        };
     },
 });
 
-export default Btn;
+export default Button;
