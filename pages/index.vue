@@ -7,7 +7,7 @@
                 class="md:container md:mx-auto md:flex-nowrap p-3 md:py-6 flex items-center flex-wrap"
             >
                 <Logo class="flex-grow" :src="logoSrc" />
-
+                <Icon icon="chat" />
                 <Icon
                     :icon="icon"
                     color="white"
@@ -33,6 +33,7 @@
                 </div>
 
                 <!-- Mobile menu -->
+                <!-- TODO: Use <menu> instead of ul - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu -->
                 <ul
                     v-if="mobileMenu"
                     class="menu flex flex-col items-center px-3 py-24 absolute inset-0 justify-between"
