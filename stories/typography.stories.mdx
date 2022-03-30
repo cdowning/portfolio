@@ -1,9 +1,20 @@
 import tailwindConfig from '~/tailwind.config.js';
-import { Meta, Typeset } from '@storybook/addon-docs';
+import { Meta, Typeset, Story, DocsContainer } from '@storybook/addon-docs';
+
+import { themes } from '@storybook/theming';
 
 export const fontSizes = tailwindConfig.theme.fontSize;
 
-<Meta title="Design System/Typography" />
+<!-- https://github.com/storybookjs/storybook/blob/master/addons/docs/docs/recipes.md#overwriting-docs-container -->
+
+<Meta
+    title="Design System/Typography"
+    parameters={{
+        docs: {
+            theme: themes.dark,
+        },
+    }}
+/>
 
 export const typography = {
     type: {

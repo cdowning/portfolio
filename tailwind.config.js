@@ -9,6 +9,18 @@ module.exports = {
     purge: [],
     darkMode: 'class', // or 'media' or 'class'
     theme: {
+        // Using this for color palette in storybook
+        colors: {
+            yellow: colors.yellow,
+            blush: colors.blush,
+            teal: colors.teal,
+            rose: colors.rose,
+            green: colors.green,
+            cream: colors.cream,
+            gray: colors.gray,
+            blue: colors.blue,
+            purple: colors.purple,
+        },
         fontFamily: {
             // https://tailwindcss.com/docs/font-family
             poppins: ['Poppins', '-apple-system', 'sans-serif'],

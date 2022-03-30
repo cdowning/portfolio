@@ -21,7 +21,7 @@ export default {
 
     // Global CSS: https://nuxtjs.org/docs/features/configuration
     css: [
-        './assets/css/tailwind.css',
+        // './assets/scss/tailwind.scss',
         './assets/scss/fonts',
         './assets/scss/main',
     ],
@@ -83,10 +83,8 @@ export default {
     },
 
     tailwindcss: {
-        cssPath: '~/assets/css/tailwind.css',
+        cssPath: '~/assets/scss/tailwind.scss',
         exposeConfig: true,
-        config: {},
-        injectPosition: 0,
     },
 
     // https://storybook.nuxtjs.org/setup
@@ -97,14 +95,12 @@ export default {
             '~/stories/*.stories.@(js|jsx|ts|tsx)',
             '~/stories/*.stories.mdx',
         ],
-        // NOTE: The order of these addons is the order they will appear in the tabs
         addons: [
-            // '@storybook/addon-controls',
-            // '@storybook/addon-actions',
-            // '@storybook/addon-a11y',
+            // 'storybook-dark-mode',
+            '@storybook/addon-a11y',
         ],
         modules: {
-            exclude: ['@nuxtjs/svg-sprite'],
+            // exclude: ['@nuxtjs/svg-sprite'],
         },
     },
 

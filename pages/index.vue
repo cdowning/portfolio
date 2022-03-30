@@ -7,7 +7,6 @@
                 class="md:container md:mx-auto md:flex-nowrap p-3 md:py-6 flex items-center flex-wrap"
             >
                 <Logo class="flex-grow" :src="logoSrc" />
-                <Icon icon="chat" />
                 <Icon
                     :icon="icon"
                     color="white"
@@ -57,7 +56,7 @@
                 </ul>
             </div>
         </header>
-        <div class="md:container md:mx-auto p-3 md:py-6">
+        <!-- <div class="md:container md:mx-auto p-3 md:py-6">
             <p class="w-full">
                 This is a <span class="text-highlight">test</span>
             </p>
@@ -75,7 +74,7 @@
                 desktop publishing software like Aldus PageMaker including
                 versions of Lorem Ipsum.
             </p>
-        </div>
+        </div> -->
     </div>
 </template>
 
