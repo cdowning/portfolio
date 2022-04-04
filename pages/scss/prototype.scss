@@ -1,0 +1,51 @@
+// @import '~assets/scss/variables.scss';
+
+body {
+    background-color: $color-cream-00;
+}
+
+.cover {
+    min-height: 90vh;
+    height: 500px;
+
+    // Color overlay with Background image
+    // background: linear-gradient(
+    //         to top,
+    //         rgba(255, 255, 255, 0.4),
+    //         rgba(255, 255, 255, 0.4)
+    //     ),
+    //     url('~/assets/images/global/computer-bg-light.jpg') no-repeat top left
+    //         fixed;
+    // background-size: cover;
+
+    // TODO: Maybe add gradient to nav so gradient isn't so strong
+    // background: rgb(255, 255, 255);
+    // background: linear-gradient(
+    //     180deg,
+    //     rgba(255, 255, 255, 0) 0%,
+    //     rgba(255, 255, 255, 0) 50%,
+    //     rgba(255, 255, 255, 1) 75%,
+    //     rgba(255, 255, 255, 1) 100%
+    // );
+
+    // Working
+    background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 1),
+            rgba(255, 255, 255, 0.25),
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0)
+        ),
+        linear-gradient(
+            to top,
+            rgba(255, 255, 255, 0.2),
+            rgba(255, 255, 255, 0.2)
+        ),
+        url('~/assets/images/global/computer-bg-light.jpg') no-repeat top left
+            fixed;
+    background-size: cover;
+
+    nav {
+        color: var(--link-primary);
+    }
+}

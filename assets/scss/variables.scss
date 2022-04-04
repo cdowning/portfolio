@@ -10,120 +10,64 @@
 // How to handle color mode: https://mohitchandani.medium.com/dark-theme-with-nuxt-js-e74e78491d0c
 // Halfway down: https://mayashavin.com/articles/dark-theme-tailwind-nuxt
 
-// Old
-$color-navy-10: #095e91;
-$color-navy-20: #054d78;
-$color-navy-30: #033f63;
-$color-navy-40: #012f4b;
-$color-navy-50: #001c2d;
+$color-yellow-00: #ededec;
+$color-yellow-10: #fbe5bf;
+$color-yellow-20: #f9d190;
+$color-yellow-30: #f6bd60;
+$color-yellow-40: #c5974d;
+$color-yellow-50: #94713a;
 
-$color-teal-10: #719fa5;
-$color-teal-20: #478088;
-$color-teal-30: #28656e;
-$color-teal-40: #134f57;
-$color-teal-50: #03353c;
+$color-blush-00: #fdf4f3;
+$color-blush-10: #fbeae7;
+$color-blush-20: #f8dad5;
+$color-blush-30: #f5cac3;
+$color-blush-40: #ddb6b0;
+$color-blush-50: #c4a29c;
 
-$color-green-10: #d0d8d3;
-$color-green-20: #a2b4a8;
-$color-green-30: #7c9885;
-$color-green-40: #5c8068;
-$color-green-50: #40684e;
+$color-teal-00: #dae4e2;
+$color-teal-10: #c2d2ce;
+$color-teal-20: #a9c0ba;
+$color-teal-30: #84a59d;
+$color-teal-40: #6a847e;
+$color-teal-50: #5c736e;
 
-$color-sage: #b5b682;
+$color-gray-00: #ededec;
+$color-gray-10: #c9c8c7;
+$color-gray-20: #807e7c;
+$color-gray-30: #4a4744;
+$color-gray-40: #2c2b29;
+$color-gray-50: #161514;
 
-$color-yellow-10: #fff6e3;
-$color-yellow-20: #fee3ab;
-$color-yellow-30: #fedc97;
-$color-yellow-40: #fdbd3b;
-$color-yellow-50: #c48402;
+$color-cream-00: #fdfbf9;
+$color-cream-10: #fbf6f1;
+$color-cream-20: #f7ede2;
+$color-cream-30: #ded5cb;
+$color-cream-40: #c6beb5;
+$color-cream-50: #948e88;
+$color-cream-60: #635f5a;
 
-$color-white: #ffffff;
-$color-black: #000000;
+$color-rose-00: #fce6e6;
+$color-rose-10: #f9c2c1;
+$color-rose-20: #f6a9a8;
+$color-rose-30: #f28482;
+$color-rose-40: #c26a68;
+$color-rose-50: #914f4e;
 
-///////// New
-$color-blush: #f9bfb2;
-$color-pink: #d8a1ab; //#d0a3ab;
-$color-lilac: #af88a0; // #a8899f
-$color-violet: #807385;
-$color-indigo: #545577;
+$color-green-00: #dce7d6;
+$color-green-10: #b9ceac;
+$color-green-20: #8aae75;
+$color-green-30: #6e8b5e;
+$color-green-40: #37462f;
+$color-green-50: #536846;
 
-$color-green: #55a572;
-$color-teal: #1b6874;
-$color-midnight: #1c2b35; // #082a2e;
+$color-blue-00: #f3fcfd;
+$color-blue-10: #e1f7fa;
+$color-blue-20: #c3eef5;
+$color-blue-30: #b0d6dd;
+$color-blue-40: #9cbec4;
 
-$color-slate-gray-00: #d5dade;
-$color-slate-gray-10: #97a4ac;
-$color-slate-gray-20: #596d79;
-$color-slate-gray-30: #2f4858; // primary
-$color-slate-gray-40: #263a46;
-$color-slate-gray-50: #1c2b35;
-$color-slate-gray-60: #131d23;
-
-$color-yellow-00: #fbeabe;
-$color-yellow-10: #f9e09d;
-$color-yellow-20: #f8db8d;
-$color-yellow-30: #f7d57d;
-$color-yellow-40: #f5cb5c; // primary
-
-$color-lime-00: #d8e5bf;
-$color-lime-10: #c5d79e;
-$color-lime-20: #b1ca7e; // #9BDE7E
-$color-lime-30: #9ebd5e; // primary
-$color-lime-40: #8eaa55;
-$color-lime-50: #7e974b;
-
-:root {
-    --bg: #f3f5f4;
-    --bg-primary: #fedc97;
-    --bg-secondary: #fedc97;
-
-    --color: #012f4b;
-    --color-primary: #28666e;
-    --color-secondary: #7c9885;
-
-    // Buttons
-    --btn-primary: #f9bfb2;
-    --btn-secondary: #f5cb5c;
-    --btn-text-primary: #2f4858;
-
-    --border-color: #b5b682;
-    --color-navigation: #28656e;
-}
-// :root {
-//     --color: #243746;
-//     --color-primary: #158876;
-//     --color-secondary: #0e2233;
-//     --bg: #f3f5f4;
-//     --bg-secondary: #fff;
-//     --border-color: #ddd;
-// }
-
-// Tertiary
-.dark-mode {
-    // Backgrounds
-    --bg: #2f4858;
-    --bg-primary: #2f4858;
-    --bg-secondary: #1c2b35;
-    // Text
-    --color: #f5cb5c;
-    --color-primary: #f9bfb2;
-    --color-secondary: #f9e09d;
-    // Buttons
-    --btn-primary: #f9bfb2;
-    --btn-secondary: #f5cb5c;
-    --btn-text-primary: #2f4858;
-    // Other
-    --border-color: #0d2538;
-    --color-navigation: #fee3ab;
-}
-
-// .dark-mode {
-//     --color: #e8eddf;
-//     --color-primary: #41b38a;
-//     --color-secondary: #fdf9f3;
-//     --bg: #242423;
-//     --bg-secondary: #071521;
-//     --border-color: #0d2538;
-//     --color-navigation: #fee3ab;
-//     --btn-primary: #fedc97;
-// }
+$color-purple-00: #e4dadd;
+$color-purple-10: #c9b5ba;
+$color-purple-20: #a5848c;
+$color-purple-30: #846a70;
+$color-purple-40: #634f54;

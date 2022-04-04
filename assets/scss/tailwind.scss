@@ -70,13 +70,13 @@ $color-purple-30: #846a70;
 $color-purple-40: #634f54;
 
 :root {
-    --bg-primary: #fffffe;
+    --bg-primary: #{$color-cream-00};
     --bg-secondary: #b8c1ec;
     --text-primary: #232946;
     --text-secondary: #121629;
     --btn-primary: #eebbc3;
     --btn-secondary: #b8c1ec;
-    --link-primary: #232946;
+    --link-primary: #{$color-cream-60};
     --link-secondary: #232946;
     --neutral-primary: #fefcff;
     --neutral-secondary: #ebeaeb;

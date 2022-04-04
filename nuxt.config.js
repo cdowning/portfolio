@@ -32,8 +32,10 @@ export default {
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: [{ path: '~/components', extensions: ['vue'] }],
 
+    // https://color-mode.nuxtjs.org/#configuration
     colorMode: {
         classSuffix: '-mode',
+        preference: 'light',
     },
 
     svgSprite: {
@@ -51,6 +53,8 @@ export default {
         '@nuxt/typescript-build',
         // https://composition-api.nuxtjs.org/
         '@nuxtjs/composition-api/module',
+        // https://github.com/nuxt-community/style-resources-module
+        '@nuxtjs/style-resources',
         // https://go.nuxtjs.dev/tailwindcss
         '@nuxtjs/tailwindcss',
         // https://github.com/nuxt-community/svg-sprite-module
@@ -70,6 +74,10 @@ export default {
         // https://github.com/vanhoofmaarten/nuxt-mq
         'nuxt-mq',
     ],
+
+    styleResources: {
+        scss: ['./assets/scss/variables.scss'],
+    },
 
     mq: {
         defaultBreakpoint: 'sm',

@@ -56,8 +56,8 @@
                 </ul>
             </div>
         </header>
-        <!-- <div class="md:container md:mx-auto p-3 md:py-6">
-            <p class="w-full">
+        <div class="md:container md:mx-auto p-3 md:py-6">
+            <!-- <p class="w-full">
                 This is a <span class="text-highlight">test</span>
             </p>
             <p class="w-full" lazy>
@@ -73,8 +73,8 @@
                 sheets containing Lorem Ipsum passages, and more recently with
                 desktop publishing software like Aldus PageMaker including
                 versions of Lorem Ipsum.
-            </p>
-        </div> -->
+            </p> -->
+        </div>
     </div>
 </template>
 
