@@ -9,10 +9,6 @@ html {
     overflow: hidden;
 }
 
-// body {
-//     background-color: $color-cream-00;
-// }
-
 .background {
     // height: 100%;
     min-height: 100vh;
@@ -58,6 +54,8 @@ html {
         justify-content: flex-end;
 
         .text {
+            position: relative;
+            z-index: 1;
             width: 100%;
             max-width: 37.5rem;
             padding: 1.5rem 2rem;

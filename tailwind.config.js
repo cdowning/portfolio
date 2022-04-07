@@ -54,7 +54,7 @@ module.exports = {
         extend: {
             backgroundColor: {
                 primary: 'var(--bg-primary)',
-                secondary: 'var(--btn-secondary)',
+                secondary: 'var(--bg-secondary)',
                 // secondary: withOpacityValue('--bg-secondary'),
             },
             textColor: {

@@ -17,7 +17,8 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.75;
-    background-color: var(--bg-primary);
+    background-color: $color-blush-30;
+    // background-color: var(--bg-primary);
     color: var(--text-primary);
     transition: background-color 0.3s;
 }
@@ -37,10 +38,6 @@ p {
     margin-bottom: 1.5rem;
 }
 
-// section {
-//     @apply py-6;
-// }
-
 // Need to refactor
 // nav,
 // .menu {
@@ -51,24 +48,119 @@ p {
     fill: var(--text-primary);
 }
 
-// https://codepen.io/pugson/pen/EwmKJp
-.text-highlight {
-    font-style: normal;
-    border-radius: 1em 0 1em 0;
-    background-image: linear-gradient(
-        -100deg,
-        rgba(249, 191, 178, 0.15) 0%,
-        rgba(249, 191, 178, 1) 5%,
-        rgba(249, 191, 178, 1) 85%,
-        rgba(249, 191, 178, 0.25) 100%
-    );
-    // background-image: linear-gradient(
-    //     -100deg,
-    //     rgba(255, 250, 150, 0.15),
-    //     rgba(255, 250, 150, 0.8) 100%,
-    //     rgba(255, 250, 150, 0.25)
-    // );
-}
+// Marker effect - Maybe create a component for this - special effects?
 .highlight {
-    background: url(//s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=ffff43);
+    display: inline-block;
+    color: inherit;
+    position: relative;
+
+    &::before {
+        background-color: rgba($color-blush-40, 0.6);
+    }
+
+    &.tailwind::before {
+        background-color: rgba($color-blue-30, 0.6);
+    }
+
+    &.vue::before {
+        background-color: rgba($color-green-20, 0.6);
+    }
+
+    &::after,
+    &::before {
+        content: '';
+        display: block;
+        height: 50%;
+        // height: 0.5em;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        transform: translateZ(0.4px) scale(1.1) translateY(-10%) rotate(-1deg);
+    }
+
+    // &::after {
+    //     background-color: var(--color-primary);
+    //     transform: scaleX(0);
+    //     transform-origin: 0 50%;
+    //     transition: transform 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+
+    //     &:hover {
+    //         transform: scaleX(1);
+    //     }
+    // }
+}
+
+.angle {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+    }
+
+    &.angle-slant-up {
+        // background-color: var(--bg-secondary);
+        background-color: var(--bg-primary);
+        height: 60px;
+        width: 100%;
+        margin-top: -60px;
+
+        &::after {
+            width: 100%;
+            height: 60px;
+            background-color: var(--bg-secondary);
+            clip-path: polygon(100% 100%, 0% 100%, 0 0);
+            // clip-path: polygon(0% 100%, 100% 0, 0 0);
+
+            // -webkit-clip-path: polygon(100% 100%, 100% 0, 0 0);
+            // clip-path: polygon(100% 100%, 100% 0, 0 0);
+        }
+    }
+    &.angle-slant-down {
+        background-color: var(--bg-primary);
+        height: 60px;
+        width: 100%;
+
+        &::after {
+            width: 100%;
+            height: 60px;
+            background-color: var(--bg-secondary);
+            -webkit-clip-path: polygon(100% 100%, 100% 0, 0 0);
+            clip-path: polygon(100% 100%, 100% 0, 0 0);
+        }
+    }
+
+    &.angle-v-down {
+        background-color: var(--bg-secondary);
+        height: 60px;
+        width: 100%;
+
+        &::after {
+            width: 100%;
+            height: 60px;
+            background-color: var(--bg-primary);
+            // -webkit-clip-path: polygon(100% 100%, 100% 0, 0 0);
+            // clip-path: polygon(100% 100%, 100% 0, 0 0); // slant
+            clip-path: polygon(100% 0, 100% 0%, 50% 100%, 0% 0%);
+            // clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); // diamond
+        }
+    }
+
+    &.angle-v-down-transparent {
+        background-color: var(--bg-secondary);
+        height: 60px;
+        width: 100%;
+
+        &::after {
+            width: 100%;
+            height: 60px;
+            background-color: var(--bg-primary);
+            // -webkit-clip-path: polygon(100% 100%, 100% 0, 0 0);
+            // clip-path: polygon(100% 100%, 100% 0, 0 0); // slant
+            clip-path: polygon(100% 0, 100% 0%, 50% 100%, 0% 0%);
+            // clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); // diamond
+        }
+    }
 }
