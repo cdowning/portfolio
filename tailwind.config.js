@@ -8,6 +8,7 @@ module.exports = {
     // mode: 'jit',
     purge: [],
     darkMode: 'class', // or 'media' or 'class'
+    important: true,
     theme: {
         // Using this for color palette in storybook
         colors: {
@@ -23,7 +24,7 @@ module.exports = {
         },
         fontFamily: {
             // https://tailwindcss.com/docs/font-family
-            poppins: ['Poppins', '-apple-system', 'sans-serif'],
+            sans: ['Poppins', '-apple-system', 'sans-serif'],
             lato: [
                 'Lato',
                 '-apple-system',
@@ -55,6 +56,10 @@ module.exports = {
                 primary: 'var(--bg-primary)',
                 secondary: 'var(--btn-secondary)',
                 // secondary: withOpacityValue('--bg-secondary'),
+            },
+            textColor: {
+                primary: 'var(--text-primary)',
+                secondary: 'var(--text-secondary)',
             },
         },
         // https://github.com/rogden/tailwind-config-viewer#themereplacements

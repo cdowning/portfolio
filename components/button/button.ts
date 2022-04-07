@@ -2,19 +2,24 @@ import { defineComponent, computed } from '@nuxtjs/composition-api';
 
 const Button = defineComponent({
     name: 'Button',
+    // inheritAttrs: true,
     props: {
+        type: {
+            type: String,
+            default: '',
+        },
+        // location: {
+        //     type: String,
+        //     default: '',
+        // },
         // Use tailwind bg-color class
         status: {
             type: String,
-            default: 'blush',
+            default: 'primary',
         },
         size: {
             type: String,
             default: 'md',
-        },
-        icon: {
-            type: String,
-            default: '',
         },
         disabled: {
             type: Boolean,
@@ -30,10 +35,6 @@ const Button = defineComponent({
         },
     },
     setup(props, context) {
-        // const hasIcon = computed(function () {
-        //     return !!context.slots.icon;
-        // });
-
         const buttonClasses = computed(function () {
             return [
                 'btn-' + props.size,
@@ -45,7 +46,6 @@ const Button = defineComponent({
         });
 
         return {
-            // hasIcon,
             buttonClasses,
         };
     },

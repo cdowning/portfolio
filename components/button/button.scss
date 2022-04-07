@@ -8,19 +8,33 @@ Button Styles
 ========================================================================*/
 
 .btn {
-    @apply rounded-lg;
+    border: 0.0625rem solid transparent;
+    line-height: 1.4;
+    min-width: 7rem;
+    margin-bottom: 1rem;
+    @apply rounded-lg pt-2 pb-1.5;
 
     &.btn-sm {
-        @apply px-6 py-1;
+        height: 2.5rem;
+        @apply px-4;
     }
     &.btn-md {
-        @apply px-7 py-2;
+        height: 3rem;
+        @apply px-6;
     }
     &.btn-lg {
-        @apply px-8 py-3;
+        height: 3.5rem;
+        @apply px-9;
     }
     &.btn-xl {
-        @apply px-9 py-4;
+        height: 4rem;
+        @apply px-12 py-4;
+    }
+
+    // Set icon color to text color of button
+    .icon {
+        color: currentColor;
+        margin-bottom: 0.25rem; // To compensate for padding in icon
     }
 
     // Color Status

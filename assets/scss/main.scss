@@ -3,10 +3,17 @@
 
 html {
     height: 100%;
+    font-size: 100%; // base font of 16px
+
+    // This is for iOS accessibility - larger text setting
+    @supports (font: -apple-system-body) {
+        font: -apple-system-body;
+    }
 }
 body {
+    margin: 0;
     min-height: 100%;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.75;
@@ -14,6 +21,25 @@ body {
     color: var(--text-primary);
     transition: background-color 0.3s;
 }
+
+// Global Elements
+h1 {
+}
+h2 {
+}
+h3 {
+    color: var(--header-primary);
+}
+h4 {
+    color: var(--header-secondary);
+}
+p {
+    margin-bottom: 1.5rem;
+}
+
+// section {
+//     @apply py-6;
+// }
 
 // Need to refactor
 // nav,

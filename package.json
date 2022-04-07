@@ -27,7 +27,6 @@
     },
     "devDependencies": {
         "@babel/eslint-parser": "^7.14.7",
-        "@nuxt/image": "^0.6.0",
         "@nuxt/types": "^2.15.7",
         "@nuxt/typescript-build": "^2.1.0",
         "@nuxtjs/color-mode": "^2.1.1",
@@ -50,7 +49,7 @@
         "postcss": "^8.3.5",
         "prettier": "^2.3.2",
         "sass": "^1.49.11",
-        "sass-loader": "10",
+        "sass-loader": "^10.2.0",
         "ts-jest": "^27.0.3",
         "ts-node": "^10.7.0",
         "url-loader": "^4.1.1",

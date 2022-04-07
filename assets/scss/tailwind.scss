@@ -40,8 +40,9 @@ $color-cream-10: #fbf6f1;
 $color-cream-20: #f7ede2;
 $color-cream-30: #ded5cb;
 $color-cream-40: #c6beb5;
-$color-cream-50: #948e88;
-$color-cream-60: #635f5a;
+$color-cream-50: #ada69e;
+$color-cream-60: #948e88;
+$color-cream-70: #635f5a;
 
 $color-rose-00: #fce6e6;
 $color-rose-10: #f9c2c1;
@@ -72,9 +73,12 @@ $color-purple-40: #634f54;
 :root {
     --bg-primary: #{$color-cream-00};
     --bg-secondary: #b8c1ec;
-    --text-primary: #232946;
+    --header-primary: #{$color-green-20};
+    --header-secondary: #{$color-blush-50};
+    --text-primary: #{$color-cream-70};
     --text-secondary: #121629;
-    --btn-primary: #eebbc3;
+    // --btn-primary: #eebbc3;
+    --btn-primary: #{$color-blush-50};
     --btn-secondary: #b8c1ec;
     --link-primary: #{$color-cream-60};
     --link-secondary: #232946;

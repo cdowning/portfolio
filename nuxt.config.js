@@ -6,7 +6,7 @@ export default {
 
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: 'Caitlin Hawley',
+        title: 'Caitlin Hawley - Frontend Developer',
         meta: [
             { charset: 'utf-8' },
             {
@@ -23,6 +23,7 @@ export default {
     css: [
         // './assets/scss/tailwind.scss',
         './assets/scss/fonts',
+        // './assets/scss/normalize',
         './assets/scss/main',
     ],
 
@@ -31,17 +32,6 @@ export default {
 
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: [{ path: '~/components', extensions: ['vue'] }],
-
-    // https://color-mode.nuxtjs.org/#configuration
-    colorMode: {
-        classSuffix: '-mode',
-        preference: 'light',
-    },
-
-    svgSprite: {
-        input: '~/assets/icons/svg',
-        defaultSprite: 'icon-sprite',
-    },
 
     server: {
         port: 8000, // default is 3000
@@ -53,14 +43,12 @@ export default {
         '@nuxt/typescript-build',
         // https://composition-api.nuxtjs.org/
         '@nuxtjs/composition-api/module',
-        // https://github.com/nuxt-community/style-resources-module
-        '@nuxtjs/style-resources',
         // https://go.nuxtjs.dev/tailwindcss
         '@nuxtjs/tailwindcss',
         // https://github.com/nuxt-community/svg-sprite-module
         '@nuxtjs/svg-sprite',
-        // https://image.nuxtjs.org/
-        '@nuxt/image',
+        // https://github.com/nuxt-community/style-resources-module
+        '@nuxtjs/style-resources',
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
@@ -75,8 +63,19 @@ export default {
         'nuxt-mq',
     ],
 
+    // https://color-mode.nuxtjs.org/#configuration
+    colorMode: {
+        classSuffix: '-mode',
+        preference: 'light',
+    },
+
+    svgSprite: {
+        input: '~/assets/icons/svg',
+        defaultSprite: 'icon-sprite',
+    },
+
     styleResources: {
-        scss: ['./assets/scss/variables.scss'],
+        scss: ['./assets/scss/variables.scss', './assets/scss/mixins.scss'],
     },
 
     mq: {
