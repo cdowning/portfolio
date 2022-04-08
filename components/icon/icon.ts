@@ -1,8 +1,15 @@
-import { defineComponent } from '@nuxtjs/composition-api';
+import {
+    defineComponent,
+    ref,
+    reactive,
+    computed,
+} from '@nuxtjs/composition-api';
 
 import SvgSprite from '@/assets/sprite/gen/icon-sprite.svg';
 
-const Icon = defineComponent({
+export const TEXT_CLASS_PREFIX = 'text-';
+
+export default defineComponent({
     name: 'Icon',
     props: {
         icon: {
@@ -27,12 +34,38 @@ const Icon = defineComponent({
             type: String,
             default: '',
         },
-    },
-    computed: {
-        iconPath(): string {
-            return `${SvgSprite}#i-${this.icon}`;
+        hoverColor: {
+            type: String,
+            default: '',
         },
+    },
+    setup(props, context) {
+        const hoverState = ref(false);
+
+        const iconPath = computed<string>(() => {
+            return `${SvgSprite}#i-${props.icon}`;
+        });
+
+        // We might need this
+        const iconColor = computed<string>(() => {
+            if (!hoverState.value && !props.hoverColor) {
+                return `${props.color}`;
+            } else {
+                return `${props.hoverColor}`;
+            }
+        });
+
+        const setHover = (value: boolean) => {
+            hoverState.value = value;
+        };
+
+        return {
+            hoverState,
+            iconPath,
+            iconColor,
+            setHover,
+        };
     },
 });
 
-export default Icon;
+// export default Icon;

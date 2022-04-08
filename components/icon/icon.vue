@@ -6,6 +6,8 @@
             { [`text-${color}`]: color },
             { [`icon-${size}`]: size },
         ]"
+        @mouseover="setHover(true)"
+        @mouseleave="setHover(false)"
     >
         <svg :class="['svg-icon']" :width="width" :height="height">
             <use
