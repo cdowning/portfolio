@@ -9,7 +9,7 @@
                 <Logo class="grow" />
                 <!-- Mobile menu icon -->
                 <Icon
-                    :icon="icon"
+                    icon="menu"
                     color="white"
                     class="menu-icon cursor-pointer z-10 md:hidden"
                     @click.native="onMobileMenu"
@@ -18,7 +18,7 @@
                 <nav
                     class="flex-grow w-full pr-3 md:flex justify-center items-center hidden"
                 >
-                    <a class="flex items-center mx-6">
+                    <a class="flex items-center mx-3">
                         <Icon
                             class="cursor-pointer mx-2"
                             color="gray-30"
@@ -26,7 +26,7 @@
                         />
                         About
                     </a>
-                    <a class="flex items-center mx">
+                    <a class="flex items-center mx-3">
                         <Icon
                             class="cursor-pointer mx-2"
                             color="gray-30"
@@ -34,7 +34,7 @@
                         />
                         Experience
                     </a>
-                    <a class="flex items-center mx-1">
+                    <a class="flex items-center mx-3">
                         <Icon
                             class="cursor-pointer mx-2"
                             color="gray-30"
@@ -55,31 +55,39 @@
 
                 <!-- Mobile menu -->
                 <!-- TODO: Use <menu> instead of ul - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu -->
-                <ul
-                    v-if="mobileMenu"
-                    class="menu mobile-menu flex flex-col items-center px-3 py-24 bg-primary"
-                >
-                    <li class="py-3">About</li>
-                    <li class="py-3">Experience</li>
-                    <li class="py-3">Contact</li>
-                    <div
-                        class="color-mode flex cursor-pointer py-3"
-                        @click="onUpdateTheme"
+                <transition name="fade">
+                    <ul
+                        v-if="mobileMenu"
+                        class="menu mobile-menu flex flex-col items-center px-3 py-24 bg-primary"
                     >
-                        <svg-icon
-                            class="theme-icon cursor-pointer pr-2"
-                            :name="colorIcon"
-                            width="24"
-                            height="24"
+                        <Icon
+                            icon="close"
+                            color="white"
+                            class="close-icon cursor-pointer z-10 md:hidden"
+                            @click.native="onMobileMenu"
                         />
-                        Switch to {{ switchColorTheme }} theme
-                    </div>
-                </ul>
+                        <li class="py-3">About</li>
+                        <li class="py-3">Experience</li>
+                        <li class="py-3">Contact</li>
+                        <div
+                            class="color-mode flex cursor-pointer py-3"
+                            @click="onUpdateTheme"
+                        >
+                            <svg-icon
+                                class="theme-icon cursor-pointer pr-2"
+                                :name="colorIcon"
+                                width="24"
+                                height="24"
+                            />
+                            Switch to {{ switchColorTheme }} theme
+                        </div>
+                    </ul>
+                </transition>
             </header>
             <div class="intro container mx-auto py-6 w-5/6">
                 <div class="text">
-                    <h1 class="text-lg">Hi, I'm Caitlin.</h1>
-                    <h2 class="text-2xl">
+                    <h1 class="text-md md:text-lg">Hi, I'm Caitlin.</h1>
+                    <h2 class="text-xl md:text-2xl">
                         Frontend Web Developer with a
                         <span class="highlight">passion</span> for design.
                     </h2>
@@ -87,7 +95,7 @@
             </div>
         </section>
         <!-- <div class="angle angle-v-down-transparent"></div> -->
-        <section class="about bg-primary">
+        <section id="about" class="about bg-primary">
             <div class="container mx-auto py-8 w-5/6">
                 <h4 class="text-base">About me</h4>
                 <h3 class="text-lg">Who am I?</h3>
@@ -137,7 +145,9 @@
                     <span class="highlight vue">Vue.js</span> for so long, I
                     would love to dabble in React.
                 </p>
-                <div class="flex flex-wrap justify-center gap-y-4 gap-x-6">
+                <div
+                    class="flex flex-wrap justify-center md:gap-y-4 md:gap-x-6"
+                >
                     <Icon icon="sass" size="xl" class="sass" />
                     <Icon icon="storybook" size="xl" class="storybook" />
                     <Icon icon="html5" size="xl" class="html" />
@@ -160,99 +170,118 @@
             </div>
         </section>
         <div class="angle angle-v-down"></div>
-        <section id="about" class="about bg-secondary">
+        <section class="about bg-secondary">
             <div class="container mx-auto py-8 w-5/6">
-                <h4 class="text-base">About me</h4>
-                <h3 class="text-lg">Who am I?</h3>
-                <p>
-                    I have 10+ years of developer experience. I strive to have
-                    clean & reusable code while following best practices.
-                </p>
-                <p>
-                    I really appreciate a good design that will leave the user
-                    with a great experience. I care a lot about the user's
-                    experience - there is nothing more frustrating than an
-                    application or website that is confusing.
-                </p>
-                <p>
-                    I have my BFA in Interactive Media & Web Design from The Art
-                    Institute of Tennessee &mdash; Nashville. I am currrently
-                    employed at Quore in Franklin, TN.
-                </p>
-            </div>
-            <div class="container mx-auto py-8 w-5/6">
-                <h4 class="text-base">Skills</h4>
-                <h3 class="text-lg">What can I do?</h3>
-                <p>
-                    My expertise is using Nuxt.js, Typescript & Sass. When
-                    building out components, I will utilize
-                    <span class="highlight">Storybook</span> to build out my
-                    component library. I have worked with many CSS Frameworks,
-                    but <span class="highlight tailwind">Tailwind</span> is the
-                    one I love the most.
-                </p>
+                <h4 class="text-base">Experiments</h4>
+                <h3 class="text-lg">Code Playground</h3>
+                <p>Check out my open source playground.</p>
 
-                <h3 class="text-lg">Skill Roadmap</h3>
-                <p>
-                    I have worked with
-                    <span class="highlight vue">Vue.js</span> for so long, I
-                    would love to dabble in React.
-                </p>
+                <!-- <div class="grid pb-8 gap-4 grid-cols-card-portrait"> -->
+                <div class="grid grid-flow-col auto-cols-fr pb-8 gap-4">
+                    <a
+                        href="https://codepen.io/cdowning/pen/vYprdXz"
+                        target="_blank"
+                    >
+                        <Card orientation="square">
+                            <template #image>
+                                <img
+                                    src="~/assets/images/codepen/highlighter.png"
+                                />
+                            </template>
+                            <template #header>Highlighter Effect</template>
+                            Highlighter effect with pure CSS.
+                        </Card>
+                    </a>
+                    <a
+                        href="https://codepen.io/cdowning/pen/dEVWKb"
+                        target="_blank"
+                    >
+                        <Card orientation="square">
+                            <template #image>
+                                <img
+                                    src="~/assets/images/codepen/skeleton-loading.png"
+                                />
+                            </template>
+                            <template #header>Skeleton Loading</template>
+                            Highlighter effect with pure CSS.
+                        </Card>
+                    </a>
+                    <a to="https://codepen.io/cdowning/pen/oNpyqGK">
+                        <Card orientation="square">
+                            <template #image>
+                                <img
+                                    src="~/assets/images/codepen/loading-spinner.png"
+                                />
+                            </template>
+                            <template #header>Loading Spinner</template>
+                            Loading spinner with CSS.
+                        </Card>
+                    </a>
+
+                    <!-- <Card>
+                        <template #image>
+                            <img
+                                src="~/assets/images/global/computer-bg-square.jpg"
+                            />
+                        </template>
+                        <template #header>Hello Header</template>
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the
+                        industry's standard dummy text ever since the 1500s,
+                        when an unknown printer took a galley of type and
+                        scrambled it to make a type specimen book.
+                    </Card>
+                    <Card>
+                        <template #image>
+                            <img
+                                src="~/assets/images/global/computer-bg-square.jpg"
+                            />
+                        </template>
+                        <template #header>Hello Header</template>
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the
+                        industry's standard dummy text ever since the 1500s,
+                        when an unknown printer took a galley of type and
+                        scrambled it to make a type specimen book.
+                    </Card> -->
+                </div>
+                <div class="block float-right">
+                    <Button
+                        type="link"
+                        location="https://codepen.io/cdowning"
+                        target="_blank"
+                        class="right"
+                    >
+                        View More
+                    </Button>
+                </div>
             </div>
         </section>
         <div class="angle angle-slant-down"></div>
         <section id="experience" class="about bg-primary">
             <div class="container mx-auto py-8 w-5/6">
-                <h4 class="text-base">About me</h4>
-                <h3 class="text-lg">Who am I?</h3>
+                <h4 class="text-base">Contact</h4>
+                <h3 class="text-lg">Let's chat</h3>
                 <p>
-                    I have 10+ years of developer experience. I strive to have
-                    clean & reusable code while following best practices.
+                    If you would like to get in touch with me, feel free to
+                    shoot me an email or text.
                 </p>
-                <p>
-                    I really appreciate a good design that will leave the user
-                    with a great experience. I care a lot about the user's
-                    experience - there is nothing more frustrating than an
-                    application or website that is confusing.
-                </p>
-                <p>
-                    I have my BFA in Interactive Media & Web Design from The Art
-                    Institute of Tennessee &mdash; Nashville. I am currrently
-                    employed at Quore in Franklin, TN.
-                </p>
-                <Button>
+                <!-- <Button>
                     Resume
                     <Icon icon="pdf" class="pl-1" />
-                </Button>
-                <!-- <Button
-                    type="link"
-                    location="/caitlin-hawley-resume.pdf"
-                    target="_blank"
-                >
-                    Resume
-                    <Icon icon="pdf" class="pl-1" color="white" />
                 </Button> -->
             </div>
-            <div class="container mx-auto py-8 w-5/6">
-                <h4 class="text-base">Skills</h4>
-                <h3 class="text-lg">What can I do?</h3>
-                <p>
-                    My expertise is using Nuxt.js, Typescript & Sass. When
-                    building out components, I will utilize
-                    <span class="highlight">Storybook</span> to build out my
-                    component library. I have worked with many CSS Frameworks,
-                    but <span class="highlight tailwind">Tailwind</span> is the
-                    one I love the most.
-                </p>
-
-                <h3 class="text-lg">Skill Roadmap</h3>
-                <p>
-                    I have worked with
-                    <span class="highlight vue">Vue.js</span> for so long, I
-                    would love to dabble in React.
-                </p>
-            </div>
         </section>
+        <footer class="bg-cream-50">
+            <div
+                class="flex justify-evenly md:justify-start container mx-auto py-8 w-5/6"
+            >
+                <Icon icon="github" size="lg" color="cream-00" />
+                <Icon icon="linkedin-circle" size="lg" color="cream-00" />
+                <Icon icon="codepen" size="lg" color="cream-00" />
+                <Icon icon="twitter" size="lg" color="cream-00" />
+            </div>
+        </footer>
     </div>
 </template>
 

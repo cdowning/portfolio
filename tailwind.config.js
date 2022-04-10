@@ -61,6 +61,11 @@ module.exports = {
                 primary: 'var(--text-primary)',
                 secondary: 'var(--text-secondary)',
             },
+            gridTemplateColumns: {
+                // https://bryanlrobinson.com/blog/howto-css-grid-layout-to-make-a-simple-fluid-card-grid/
+                'card-portrait': 'repeat(auto-fit, minmax(320px, 1fr))',
+                'card-landscape': 'repeat(auto-fit, minmax(200px, 1fr))',
+            },
         },
         // https://github.com/rogden/tailwind-config-viewer#themereplacements
         configViewer: {

@@ -83,15 +83,15 @@ html {
     .mobile-menu {
         position: fixed;
         @apply inset-0;
-        z-index: 9;
+        z-index: 10;
         overflow: hidden;
     }
 
     // TODO: See if I can come up with a solution with not making it absolute
-    .menu-icon,
+    // .menu-icon,
     .close-icon {
         top: 48px;
         position: fixed;
-        right: 48px;
+        right: 46px;
     }
 }

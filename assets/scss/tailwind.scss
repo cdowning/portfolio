@@ -26,6 +26,8 @@ $cream-light: rgba($color-cream-30, 0.6);
     --link-secondary: #232946;
     --neutral-primary: #fefcff;
     --neutral-secondary: #ebeaeb;
+    --card-bg-primary: #ffffff;
+    --card-bg-secondary: #{$color-cream-10};
 }
 
 .dark-mode {
@@ -39,4 +41,6 @@ $cream-light: rgba($color-cream-30, 0.6);
     --link-secondary: #fffffe;
     --neutral-primary: #545455;
     --neutral-secondary: #1c1c1c;
+    --card-bg-primary: #ffffff;
+    --card-bg-secondary: #{$color-cream-10};
 }

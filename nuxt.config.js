@@ -14,6 +14,31 @@ export default {
                 content:
                     'width=device-width, initial-scale=1, viewport-fit=cover"',
             },
+            {
+                name: 'og:title',
+                content: 'Caitlin Hawley',
+            },
+            {
+                name: 'og:site_name',
+                content: 'Frontend Developer',
+            },
+            {
+                name: 'og:url',
+                content: 'http://www.caitlinhawley.com',
+            },
+            {
+                name: 'og:description',
+                content: 'Frontend Developer with a passion for design',
+            },
+            {
+                name: 'og:type',
+                content: 'website',
+            },
+            {
+                name: 'og:image',
+                content:
+                    'http://nuxt.caitlinhawley.com/assets/images/global/computer-bg-square.jpg',
+            },
             { hid: 'description', name: 'description', content: '' },
             { name: 'format-detection', content: 'telephone=no' },
         ],
@@ -24,6 +49,7 @@ export default {
     css: [
         // './assets/scss/tailwind.scss',
         './assets/scss/fonts',
+        './assets/scss/transitions',
         // './assets/scss/normalize',
         './assets/scss/main',
     ],
