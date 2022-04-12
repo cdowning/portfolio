@@ -19,15 +19,17 @@ export default defineComponent({
         },
         width: {
             type: Number,
-            default: 24,
+            default: 20,
+            required: false,
         },
         height: {
             type: Number,
-            default: 24,
+            default: 20,
+            required: false,
         },
         size: {
             type: String, // sm, md, lg.
-            default: '',
+            default: 'md',
         },
         // Could use tailwind color classes
         color: {

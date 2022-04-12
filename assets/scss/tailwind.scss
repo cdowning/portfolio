@@ -28,10 +28,12 @@ $cream-light: rgba($color-cream-30, 0.6);
     --neutral-secondary: #ebeaeb;
     --card-bg-primary: #ffffff;
     --card-bg-secondary: #{$color-cream-10};
+    --bg-overlay: rgba(253, 251, 249, 0.7);
+    --text-navigation: rgb(148, 142, 136);
 }
 
 .dark-mode {
-    --bg-primary: #{$color-gray-40};
+    --bg-primary: #{$color-gray-70};
     --bg-secondary: #121629;
     --text-primary: #fffffe;
     --text-secondary: #b8c1ec;
@@ -43,4 +45,6 @@ $cream-light: rgba($color-cream-30, 0.6);
     --neutral-secondary: #1c1c1c;
     --card-bg-primary: #ffffff;
     --card-bg-secondary: #{$color-cream-10};
+    --bg-overlay: rgba(52, 50, 48, 0.7);
+    --text-navigation: #{$color-cream-10};
 }

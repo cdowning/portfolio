@@ -15,8 +15,7 @@ body {
     min-height: 100%;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 1.75;
+    line-height: 1.5;
     background-color: var(--bg-primary);
     color: var(--text-primary);
     transition: background-color 0.3s;
@@ -38,6 +37,9 @@ p {
 }
 a {
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 // Updating highlight text
@@ -54,10 +56,10 @@ a {
 }
 
 // Need to refactor
-// nav,
-// .menu {
-//     color: var(--color-navigation);
-// }
+nav,
+.menu {
+    color: var(--text-navigation);
+}
 
 // .menu {
 //     z-index: 2;

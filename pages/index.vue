@@ -6,7 +6,7 @@
         <!-- First Section -->
         <section class="cover flex flex-col">
             <header class="flex items-center container mx-auto py-6 w-5/6">
-                <Logo class="grow" />
+                <Logo class="grow" :src="logoSrc" />
                 <!-- Mobile menu icon -->
                 <Icon
                     icon="menu"
@@ -15,34 +15,23 @@
                     @click.native="onMobileMenu"
                 />
                 <!-- Desktop/tablet nav -->
-                <nav
+                <Navigation
                     class="flex-grow w-full pr-3 md:flex justify-center items-center hidden"
                 >
-                    <a class="flex items-center mx-3">
-                        <Icon
-                            class="cursor-pointer mx-2"
-                            color="gray-30"
-                            icon="female"
-                        />
+                    <a class="mx-3">
+                        <Icon class="mx-2" icon="female" />
                         About
                     </a>
-                    <a class="flex items-center mx-3">
-                        <Icon
-                            class="cursor-pointer mx-2"
-                            color="gray-30"
-                            icon="briefcase"
-                        />
+                    <a class="mx-3">
+                        <Icon class="mx-2" icon="briefcase" />
                         Experience
                     </a>
-                    <a class="flex items-center mx-3">
-                        <Icon
-                            class="cursor-pointer mx-2"
-                            color="gray-30"
-                            icon="envelope"
-                        />
+                    <a class="mx-3">
+                        <Icon class="mx-2" icon="envelope" />
                         Contact
                     </a>
-                </nav>
+                </Navigation>
+
                 <div class="color-mode hidden md:block">
                     <svg-icon
                         :class="['theme-icon', 'cursor-pointer']"

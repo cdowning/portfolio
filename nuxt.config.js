@@ -47,10 +47,8 @@ export default {
 
     // Global CSS: https://nuxtjs.org/docs/features/configuration
     css: [
-        // './assets/scss/tailwind.scss',
         './assets/scss/fonts',
         './assets/scss/transitions',
-        // './assets/scss/normalize',
         './assets/scss/main',
     ],
 
