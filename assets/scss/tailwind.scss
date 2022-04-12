@@ -32,7 +32,8 @@ $cream-light: rgba($color-cream-30, 0.6);
     --text-navigation: rgb(148, 142, 136);
 }
 
-.dark-mode {
+.dark-mode,
+.dark {
     --bg-primary: #{$color-gray-70};
     --bg-secondary: #121629;
     --text-primary: #fffffe;

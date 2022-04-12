@@ -45,19 +45,28 @@
                 <!-- Mobile menu -->
                 <!-- TODO: Use <menu> instead of ul - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu -->
                 <transition name="fade">
-                    <ul
+                    <Navigation
                         v-if="mobileMenu"
+                        direction="vertical"
                         class="menu mobile-menu flex flex-col items-center px-3 py-24 bg-primary"
                     >
                         <Icon
                             icon="close"
-                            color="white"
                             class="close-icon cursor-pointer z-10 md:hidden"
                             @click.native="onMobileMenu"
                         />
-                        <li class="py-3">About</li>
-                        <li class="py-3">Experience</li>
-                        <li class="py-3">Contact</li>
+                        <a class="my-3">
+                            <Icon class="mx-2" icon="female" />
+                            About
+                        </a>
+                        <a class="my-3">
+                            <Icon class="mx-2" icon="briefcase" />
+                            Experience
+                        </a>
+                        <a class="my-3">
+                            <Icon class="mx-2" icon="envelope" />
+                            Contact
+                        </a>
                         <div
                             class="color-mode flex cursor-pointer py-3"
                             @click="onUpdateTheme"
@@ -70,7 +79,7 @@
                             />
                             Switch to {{ switchColorTheme }} theme
                         </div>
-                    </ul>
+                    </Navigation>
                 </transition>
             </header>
             <div class="intro container mx-auto py-6 w-5/6">
@@ -107,21 +116,13 @@
                     Resume
                     <Icon icon="pdf" class="pl-1" />
                 </Button>
-                <!-- <Button
-                    type="link"
-                    location="/caitlin-hawley-resume.pdf"
-                    target="_blank"
-                >
-                    Resume
-                    <Icon icon="pdf" class="pl-1" color="white" />
-                </Button> -->
             </div>
             <div id="skills" class="container mx-auto py-8 w-5/6">
                 <h4 class="text-base">Skills</h4>
                 <h3 class="text-lg">What can I do?</h3>
                 <p>
                     My expertise is using Nuxt.js, Typescript & Sass. When
-                    building out components, I will utilize
+                    building out components, I utilize
                     <span class="highlight">Storybook</span> to build out my
                     component library. I have worked with many CSS Frameworks,
                     but <span class="highlight tailwind">Tailwind</span> is the
@@ -165,8 +166,8 @@
                 <h3 class="text-lg">Code Playground</h3>
                 <p>Check out my open source playground.</p>
 
-                <!-- <div class="grid pb-8 gap-4 grid-cols-card-portrait"> -->
-                <div class="grid grid-flow-col auto-cols-fr pb-8 gap-4">
+                <div class="grid pb-8 gap-4 grid-cols-card-portrait">
+                    <!-- <div class="grid md:grid-flow-col auto-cols-fr pb-8 gap-4"> -->
                     <a
                         href="https://codepen.io/cdowning/pen/vYprdXz"
                         target="_blank"
