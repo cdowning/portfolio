@@ -14,14 +14,15 @@ $cream-light: rgba($color-cream-30, 0.6);
 
 :root {
     --bg-primary: #{$color-cream-00};
-    --bg-secondary: #eae5dd;
-    --header-primary: #{$color-green-20};
+    --bg-secondary: #eee9e3;
+    // --bg-secondary: #eae5dd;
+    --header-primary: #{$color-teal-30};
     --header-secondary: #{$color-blush-50};
     --text-primary: #{$color-cream-70};
     --text-secondary: #121629;
-    // --btn-primary: #eebbc3;
     --btn-primary: #{$color-blush-50};
-    --btn-secondary: #b8c1ec;
+    --btn-secondary: #77948d;
+    --btn-text-primary: #ffffff;
     --link-primary: #{$color-cream-60};
     --link-secondary: #232946;
     --neutral-primary: #fefcff;
@@ -29,17 +30,20 @@ $cream-light: rgba($color-cream-30, 0.6);
     --card-bg-primary: #ffffff;
     --card-bg-secondary: #{$color-cream-10};
     --bg-overlay: rgba(253, 251, 249, 0.7);
-    --text-navigation: rgb(148, 142, 136);
+    --text-navigation: #{$color-cream-70};
+    // --text-navigation: rgb(148, 142, 136);
 }
 
-.dark-mode,
-.dark {
-    --bg-primary: #{$color-gray-70};
-    --bg-secondary: #121629;
-    --text-primary: #fffffe;
+.dark-mode {
+    --bg-primary: #{$color-gray-60};
+    --bg-secondary: #56534f;
+    --header-primary: #{$color-green-10};
+    --header-secondary: #{$color-blush-40};
+    --text-primary: #{$color-cream-10};
     --text-secondary: #b8c1ec;
-    --btn-primary: #eebbc3;
-    --btn-secondary: #b8c1ec;
+    --btn-primary: #f8dad5;
+    --btn-secondary: #b9ceac;
+    --btn-text-primary: #{$color-gray-50};
     --link-primary: #fffffe;
     --link-secondary: #fffffe;
     --neutral-primary: #545455;

@@ -262,18 +262,18 @@
                 </Button> -->
             </div>
         </section>
-        <footer class="bg-cream-50">
+        <footer class="bg-cream-50 text-cream-10">
             <div
                 class="flex justify-evenly md:justify-start container mx-auto py-8 w-5/6"
             >
-                <Icon icon="github" size="lg" color="cream-00" />
-                <Icon icon="linkedin-circle" size="lg" color="cream-00" />
-                <Icon icon="codepen" size="lg" color="cream-00" />
-                <Icon icon="twitter" size="lg" color="cream-00" />
+                <Icon icon="github" size="lg" color="cream-10" />
+                <Icon icon="linkedin-circle" size="lg" color="cream-10" />
+                <Icon icon="codepen" size="lg" color="cream-10" />
+                <Icon icon="twitter" size="lg" color="cream-10" />
             </div>
         </footer>
     </div>
 </template>
 
 <script lang="ts" src="./ts/prototype.ts"></script>
-<style lang="scss" src="./scss/prototype.scss" scoped></style>
+<!--<style lang="scss" src="./scss/prototype.scss" scoped></style>-->

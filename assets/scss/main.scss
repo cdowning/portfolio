@@ -1,6 +1,12 @@
 // @import './variables';
 // @import './fonts';
 
+html,
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
 html {
     height: 100%;
     font-size: 100%; // base font of 16px
@@ -184,5 +190,99 @@ nav,
             clip-path: polygon(100% 0, 100% 0%, 50% 100%, 0% 0%);
             // clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); // diamond
         }
+    }
+}
+
+.background {
+    min-height: 100vh;
+    height: 500px;
+    filter: blur(0.5px);
+    -webkit-filter: blur(0.5px);
+    position: absolute;
+    @apply inset-0;
+    z-index: -1;
+
+    background: url('~/assets/images/global/computer-bg-square.jpg') no-repeat
+        center center;
+    background-size: cover;
+
+    @screen md {
+        background-position: top left;
+        background-attachment: fixed;
+        background-image: url('~/assets/images/global/computer-bg-light.jpg');
+    }
+
+    // .dark-mode & {
+    //     background: url('~/assets/images/global/computer-bg-square.jpg')
+    //         no-repeat center center;
+    //     background-size: cover;
+
+    //     @screen md {
+    //         background-position: top left;
+    //         background-attachment: fixed;
+    //         background-image: url('~/assets/images/global/computer-bg-light.jpg');
+    //     }
+    // }
+}
+
+.cover {
+    min-height: 100vh;
+    height: 500px;
+    background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 1),
+            rgba(255, 255, 255, 0.25),
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0)
+        ),
+        linear-gradient(
+            to top,
+            rgba(255, 255, 255, 0.2),
+            rgba(255, 255, 255, 0.2)
+        );
+
+    .dark-mode & {
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0)
+        );
+        // linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    }
+
+    .intro {
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+        justify-content: flex-end;
+
+        .text {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 37.5rem;
+            padding: 1.5rem 2rem;
+            background-color: var(--bg-overlay);
+            color: var(--text-primary);
+        }
+    }
+
+    .mobile-menu {
+        position: fixed;
+        @apply inset-0;
+        z-index: 10;
+        overflow: hidden;
+    }
+
+    // TODO: See if I can come up with a solution with not making it absolute
+    // .menu-icon,
+    .close-icon {
+        top: 48px;
+        position: fixed;
+        right: 46px;
     }
 }

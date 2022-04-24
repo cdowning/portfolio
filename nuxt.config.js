@@ -129,10 +129,11 @@ export default {
         ],
         addons: [
             // 'storybook-dark-mode',
-            '@storybook/addon-a11y',
+            // '@storybook/addon-a11y',
         ],
+        // modules: false,
         modules: {
-            // exclude: ['@nuxtjs/svg-sprite'],
+            exclude: ['@nuxtjs/color-mode'],
         },
     },
 

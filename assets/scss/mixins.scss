@@ -1,5 +1,12 @@
-// Magic parallax mixins
-// https://css-tricks.com/pure-css-parallax-scrolling-websites/
+@mixin linear-gradient($direction, $color-stops...) {
+    background: nth(nth($color-stops, 1), 1);
+    background: -webkit-linear-gradient(
+        legacy-direction($direction),
+        $color-stops
+    );
+    background: linear-gradient($direction, $color-stops);
+}
+
 @mixin color-60($color) {
     color: rgba($color, 0.6);
 }

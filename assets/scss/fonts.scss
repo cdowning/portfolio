@@ -27,7 +27,7 @@ $font_path: '~assets/fonts/';
 @font-face {
     font-family: 'Poppins';
     src: local('Poppins Regular'), local('Poppins-Regular'),
-        // url($font_path + 'poppins-regular.ttf') format('truetype'),
+        url($font_path + 'poppins-regular.ttf') format('truetype'),
         url($font_path + 'poppins-regular.woff2') format('woff2'),
         url($font_path + 'poppins-regular.woff') format('woff');
     font-weight: 400;
