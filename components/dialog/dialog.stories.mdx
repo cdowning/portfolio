@@ -1,0 +1,75 @@
+import {
+    Canvas,
+    Meta,
+    Story,
+    ArgsTable,
+    Description,
+} from '@storybook/addon-docs';
+
+export const dialogContent = {
+    header: 'Header Text Here',
+    details:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+};
+
+import Dialog from './dialog.vue';
+
+<Meta
+    title="Components/Dialog"
+    component={Dialog}
+    argTypes={{
+        size: {
+            options: ['sm', 'md', 'full-screen'],
+            description: 'Width of the dialog',
+            table: {
+                type: { summary: 'string' },
+                defaultValue: { summary: 'md' },
+            },
+            control: {
+                type: 'select',
+            },
+        },
+    }}
+/>
+
+export const Template = (args, { argTypes }) => {
+    return {
+        props: Object.keys(argTypes),
+        components: { Dialog },
+        data() {
+            return {
+                dialog: {
+                    simple: false,
+                },
+            };
+        },
+        template: `<div>
+            <Button @click="dialog.simple = !dialog.simple">
+                Open Simple Dialog
+            </Button>
+            <Dialog
+                v-if="dialog.simple"
+                v-bind="$props"
+                @close="dialog.simple = false"
+            >
+                <!--<template #header="{ header }">
+                    {{ header }}
+                </template>-->
+                <!-- If we don't include the template below - it will use the style in dialog.vue -->
+                <template #content="{ details }">
+                    <p class="text-cream-60">{{ details }}</p>
+                </template>
+            </Dialog>
+        </div>`,
+    };
+};
+
+# Dialog
+
+<Canvas>
+    <Story name="Overview" args={{ size: 'sm', content: dialogContent }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Overview" />

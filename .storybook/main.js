@@ -13,5 +13,8 @@ module.exports = nuxifyStorybook({
         '~/stories/*.stories.@(js|jsx|ts|tsx)',
         '~/stories/*.stories.mdx',
     ],
-    addons: ['storybook-dark-mode', '@storybook/addon-a11y'],
+    addons: [
+        'storybook-dark-mode',
+        // '@storybook/addon-a11y' // This is throwing an error
+    ],
 });
