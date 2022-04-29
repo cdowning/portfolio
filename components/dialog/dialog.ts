@@ -15,31 +15,30 @@ export default defineComponent({
             type: String,
             default: 'md',
         },
-        content: {
+        data: {
             type: Object,
             default: () => {},
+        },
+        isDismissible: {
+            type: Boolean,
+            default: true,
         },
     },
     emits: ['close'],
     setup(props, context) {
-        const content = toRefs(props.content);
-        console.log(content);
+        const content = ref(props.data);
 
         function onCloseDialog() {
-            context.emit('close');
+            if (props.isDismissible) {
+                context.emit('close');
+            }
         }
-
-        onMounted(() => {
-            const test = content.header || null;
-            console.log(!!test);
-        });
 
         return {
             onCloseDialog,
-            // slot content
-
-            header: content.header || '',
-            details: content.details || '',
+            // slot content - if passed through the content prop, otherwise use the name slot
+            header: content.value?.header,
+            details: content.value?.details,
         };
     },
 });

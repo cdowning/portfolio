@@ -91,7 +91,7 @@ export default {
     // https://color-mode.nuxtjs.org/#configuration
     colorMode: {
         classSuffix: '-mode',
-        // preference: 'light',
+        preference: 'light',
     },
 
     svgSprite: {

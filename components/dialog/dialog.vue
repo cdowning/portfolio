@@ -22,6 +22,7 @@
 
             <div class="overlay" @click="onCloseDialog"></div>
             <Icon
+                v-if="isDismissible"
                 icon="close"
                 size="md"
                 class="close cursor-pointer"
