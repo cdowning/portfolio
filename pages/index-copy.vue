@@ -21,6 +21,62 @@
             <div
                 class="card-group grid grid-cols-3 pb-8 gap-8 card-group-portrait"
             >
+                <Card orientation="square" :show-image-placeholder="false">
+                    <template #header>
+                        <h3 class="text-lg">Header (Simple)</h3>
+                    </template>
+                    <template #content>
+                        <p>
+                            Tart chupa chups liquorice jelly beans gummi bears
+                            bonbon sweet roll halvah bonbon. Dragée cookie
+                            shortbread chupa chups pie dessert apple pie
+                            fruitcake. Sesame snaps jelly croissant jelly-o
+                            apple pie marzipan sesame snaps. Dragée macaroon
+                            cake dessert icing. Cookie sugar plum chocolate cake
+                            liquorice shortbread donut. Sesame snaps cupcake
+                            muffin shortbread fruitcake apple pie pie chocolate
+                            bar bonbon. Pudding carrot cake donut donut muffin
+                            cotton candy ice cream apple pie pastry. Gingerbread
+                            sweet roll donut sweet topping jelly. Wafer lollipop
+                            marshmallow gingerbread tart cake carrot cake apple
+                            pie. Jujubes icing shortbread cotton candy apple pie
+                            carrot cake. Bonbon macaroon chocolate cookie sugar
+                            plum sweet macaroon lollipop danish. Gummies
+                            tiramisu soufflé bear claw pudding cheesecake.
+                            Topping donut sesame snaps pie cotton candy jujubes
+                            cheesecake chupa chups. Cotton candy tart topping
+                            toffee tart gummi bears cupcake tart sesame snaps.
+                        </p>
+                    </template>
+                </Card>
+                <Card orientation="square">
+                    <template #header>
+                        <h3 class="text-lg">Header (Simple)</h3>
+                    </template>
+                    <template #content>
+                        <p>
+                            Tart chupa chups liquorice jelly beans gummi bears
+                            bonbon sweet roll halvah bonbon. Dragée cookie
+                            shortbread chupa chups pie dessert apple pie
+                            fruitcake. Sesame snaps jelly croissant jelly-o
+                            apple pie marzipan sesame snaps. Dragée macaroon
+                            cake dessert icing. Cookie sugar plum chocolate cake
+                            liquorice shortbread donut. Sesame snaps cupcake
+                            muffin shortbread fruitcake apple pie pie chocolate
+                            bar bonbon. Pudding carrot cake donut donut muffin
+                            cotton candy ice cream apple pie pastry. Gingerbread
+                            sweet roll donut sweet topping jelly. Wafer lollipop
+                            marshmallow gingerbread tart cake carrot cake apple
+                            pie. Jujubes icing shortbread cotton candy apple pie
+                            carrot cake. Bonbon macaroon chocolate cookie sugar
+                            plum sweet macaroon lollipop danish. Gummies
+                            tiramisu soufflé bear claw pudding cheesecake.
+                            Topping donut sesame snaps pie cotton candy jujubes
+                            cheesecake chupa chups. Cotton candy tart topping
+                            toffee tart gummi bears cupcake tart sesame snaps.
+                        </p>
+                    </template>
+                </Card>
                 <Card orientation="square">
                     <template #image>
                         <img
@@ -53,6 +109,17 @@
                             cheesecake chupa chups. Cotton candy tart topping
                             toffee tart gummi bears cupcake tart sesame snaps.
                         </p>
+                    </template>
+                    <template #footer>
+                        <Button
+                            variant="secondary"
+                            size="sm"
+                            outlined
+                            is-full-width
+                            class="mb-2"
+                        >
+                            CTA
+                        </Button>
                     </template>
                 </Card>
             </div>

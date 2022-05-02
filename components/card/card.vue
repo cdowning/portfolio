@@ -1,39 +1,30 @@
 <template>
     <div :class="['card flex', cardClasses]">
         <!-- Show placeholder if no image? -->
-        <figure
-            v-if="image && showImagePlaceholder && useData"
-            class="card-image"
+        <div
+            v-if="showImagePlaceholder"
+            :class="[
+                'card-image-container',
+                { 'rounded-t-lg': !!isRounded && orientation !== 'landscape' },
+                { 'rounded-l-lg': !!isRounded && orientation === 'landscape' },
+            ]"
         >
-            <slot name="image" v-bind="{ source, image }">
-                <img :src="image" />
-            </slot>
-        </figure>
-        <figure v-else class="card-image card-image-placeholder">
-            <slot name="image" v-bind="{ source, image }">
-                <img
-                    :src="imagePath"
-                    :class="[orientation === 'landscape' ? 'w-8/12' : 'w-6/12']"
-                />
-            </slot>
-        </figure>
-        <!-- <figure v-else class="card-image">
-            <slot name="image"> </slot>
-        </figure> -->
-        <!-- <slot name="image" v-bind="{ source, image }">
-            <figure v-if="image && showImagePlaceholder" class="card-image">
-                <img :src="image" class="object-cover" />
+            <figure v-if="hasImageSlot" class="card-image">
+                <slot name="image" v-bind="{ source, image }">
+                    <img :src="image" />
+                </slot>
             </figure>
             <figure v-else class="card-image card-image-placeholder">
-                <img
-                    :src="imagePath"
-                    :class="[
-                        'object-contain m-auto',
-                        orientation === 'landscape' ? 'w-8/12' : 'w-6/12',
-                    ]"
-                />
+                <slot name="image" v-bind="{ source, image }">
+                    <img
+                        :src="imagePath"
+                        :class="[
+                            orientation === 'landscape' ? 'w-8/12' : 'w-6/12',
+                        ]"
+                    />
+                </slot>
             </figure>
-        </slot> -->
+        </div>
 
         <div class="card-content flex flex-col">
             <div class="card-details">
@@ -111,6 +102,10 @@ export default defineComponent({
         const data = ref(props.item);
         const useData = !!data.value;
 
+        const hasImageSlot = computed<boolean>(() => {
+            return !!context.slots.image || !!data.value?.image;
+        });
+
         const imagePath = computed<string>(() => {
             const path =
                 props.imagePlaceholder ||
@@ -132,6 +127,7 @@ export default defineComponent({
 
         return {
             useData,
+            hasImageSlot,
 
             header: data.value?.header,
             description: data.value?.description,

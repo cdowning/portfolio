@@ -1,11 +1,12 @@
 <template>
-    <div :class="['card-group grid pb-8 gap-8', cardGroupClasses]">
+    <div :class="['card-group grid pb-8', cardGroupClasses]">
         <!-- v-if="items" - https://v2.vuejs.org/v2/style-guide/?redirect=true#Avoid-v-if-with-v-for-essential -->
         <Card
             v-for="(item, index) in items"
             :key="index"
             :item="item"
             :orientation="orientation"
+            :is-rounded="isRounded"
         >
         </Card>
     </div>
@@ -28,20 +29,27 @@ export default defineComponent({
             type: Array,
             default: () => [],
         },
+        gap: {
+            type: String,
+            default: 'gap-4',
+        },
         // This should probably be on the card
         orientation: {
             type: String,
             default: 'portrait',
         },
-        // rounded or square - change this to a boolean? isRounded?
-        shape: {
-            type: String,
-            default: '',
+        isRounded: {
+            type: Boolean,
+            default: false,
         },
     },
     setup(props, context) {
         const cardGroupClasses = computed<object>(() => {
-            return [CARDS_CLASS_PREFIX + props.orientation];
+            return [
+                CARDS_CLASS_PREFIX + props.orientation,
+                props.gap,
+                { 'rounded-lg': !!props.isRounded },
+            ];
         });
 
         return { cardGroupClasses };
