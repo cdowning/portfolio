@@ -6,6 +6,10 @@ export const BORDER_CLASS_PREFIX = 'border-';
 const Card = defineComponent({
     name: 'Card',
     props: {
+        item: {
+            type: Object,
+            default: () => {},
+        },
         borderBottom: {
             type: String,
             default: '',
@@ -20,7 +24,6 @@ const Card = defineComponent({
         },
     },
     setup(props, context) {
-        console.log(context);
         const cardClasses = computed(function () {
             return [
                 CARD_CLASS_PREFIX + props.size,

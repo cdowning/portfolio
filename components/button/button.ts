@@ -8,18 +8,19 @@ const Button = defineComponent({
             type: String,
             default: '',
         },
-        // location: {
-        //     type: String,
-        //     default: '',
-        // },
-        // Use tailwind bg-color class
-        status: {
+        // TODO: Use tailwind bg-color class
+        // primary, secondary, link
+        variant: {
             type: String,
             default: 'primary',
         },
         size: {
             type: String,
             default: 'md',
+        },
+        isFullWidth: {
+            type: Boolean,
+            default: false,
         },
         disabled: {
             type: Boolean,
@@ -29,19 +30,20 @@ const Button = defineComponent({
             type: Boolean,
             default: false,
         },
-        isFullWidth: {
+        isRounded: {
             type: Boolean,
-            default: false,
+            default: true,
         },
     },
     setup(props, context) {
         const buttonClasses = computed(function () {
             return [
                 'btn-' + props.size,
-                { ['btn-' + props.status]: props.status },
+                { ['btn-' + props.variant]: props.variant },
                 { 'has-icon': !!context.slots.icon },
                 { 'w-full': !!props.isFullWidth },
                 { 'btn-outlined': !!props.outlined },
+                { 'rounded-lg': !!props.isRounded },
             ];
         });
 

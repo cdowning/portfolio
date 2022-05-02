@@ -1,6 +1,6 @@
 /*========================================================================
 Button Styles
-- Button/Status Colors
+- Button/Variant Colors
 - Button Sizes
 - Button Shape (Pill, Rounded)
 - Disabled State
@@ -8,11 +8,13 @@ Button Styles
 ========================================================================*/
 
 .btn {
-    border: 0.0625rem solid transparent;
     line-height: 1.4;
     min-width: 7rem;
-    margin-bottom: 1rem;
-    @apply rounded-lg pt-2 pb-1.5;
+    @apply pt-2 pb-1.5;
+
+    &:not(.btn-link) {
+        border: 0.0625rem solid transparent;
+    }
 
     &.btn-sm {
         height: 2.5rem;
@@ -36,7 +38,7 @@ Button Styles
         color: currentColor;
     }
 
-    // Color Status
+    // Color Variants
     &.btn-primary {
         background-color: var(--btn-primary);
         color: var(--btn-text-primary);
@@ -47,7 +49,7 @@ Button Styles
     }
 
     // Outline Styles
-    &.btn-outlined {
+    &.btn-outlined:not(.btn-link) {
         border-width: 1px;
         border-style: solid;
         background-color: transparent;

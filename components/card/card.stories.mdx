@@ -1,0 +1,33 @@
+import {
+    Canvas,
+    Meta,
+    Story,
+    ArgsTable,
+    Description,
+} from '@storybook/addon-docs';
+
+import Card from './card.vue';
+import CardGroup from '../card-group/card-group.vue';
+
+<Meta title="Components/Card" component={Card} argTypes={{}} />
+
+export const Template = (args, { argTypes }) => {
+    return {
+        props: Object.keys(argTypes),
+        components: { Card, CardGroup },
+        template: `<CardGroup>
+            <Card v-bind="$props">
+            </Card>
+        </CardGroup>`,
+    };
+};
+
+# Card
+
+<!--<Canvas>
+    <Story name="Overview" args={{}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Overview" />-->

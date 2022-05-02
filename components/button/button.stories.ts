@@ -3,7 +3,7 @@ import type { Args, ArgType as BaseArgType } from '@storybook/addons';
 // import Icon from '../icon/icon.vue';
 import Button from './button.vue';
 
-const colors = ['primary', 'secondary'];
+const colors = ['primary', 'secondary', 'link'];
 const sizes = ['sm', 'md', 'lg', 'xl'];
 const icons = ['', 'moon', 'sun', 'close', 'menu', 'computer'];
 
@@ -12,16 +12,17 @@ export default {
     title: 'Components/Button',
     component: { Button },
     args: {
-        status: 'primary',
+        variant: 'primary',
         size: 'md',
         icon: '',
         outlined: false,
         disabled: false,
         text: 'hello there',
+        isFullWidth: false,
     },
     // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
     argTypes: {
-        status: {
+        variant: {
             description: 'Color of the button',
             options: colors,
             table: {
