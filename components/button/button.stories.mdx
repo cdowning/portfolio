@@ -1,27 +1,29 @@
-import type { Args, ArgType as BaseArgType } from '@storybook/addons';
+import {
+    Canvas,
+    Meta,
+    Story,
+    ArgsTable,
+    Description,
+} from '@storybook/addon-docs';
 
-// import Icon from '../icon/icon.vue';
+export const colors = ['primary', 'secondary', 'link'];
+export const sizes = ['sm', 'md', 'lg', 'xl'];
+export const icons = ['', 'moon', 'sun', 'close', 'menu', 'computer'];
+
 import Button from './button.vue';
 
-const colors = ['primary', 'secondary', 'link'];
-const sizes = ['sm', 'md', 'lg', 'xl'];
-const icons = ['', 'moon', 'sun', 'close', 'menu', 'computer'];
-
-// More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
-export default {
-    title: 'TS/Button',
-    component: { Button },
-    args: {
-        variant: 'primary',
-        size: 'md',
-        icon: '',
-        outlined: false,
-        disabled: false,
-        text: 'hello there',
-        isFullWidth: false,
-    },
-    // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
-    argTypes: {
+<Meta
+    title="Components/Buttons"
+    component={Button}
+    decorators={[
+        () => ({
+            template: '<div style="height: 250px;"><story /></div>',
+        }),
+    ]}
+    argTypes={{
+        type: {
+            table: { disable: true },
+        },
         variant: {
             description: 'Color of the button',
             options: colors,
@@ -76,21 +78,46 @@ export default {
                 type: 'text',
             },
             table: {
-                category: 'Slots',
+                category: 'slots',
                 type: { summary: 'text' },
                 defaultValue: { summary: '' },
             },
         },
-    },
+        default: {
+            table: { disable: true },
+        },
+    }}
+></Meta>
+
+export const Template = (args, { argTypes }) => {
+    return {
+        props: Object.keys(argTypes),
+        components: { Button },
+        template: `
+            <Button v-bind="$props">
+                {{ text }}
+            </Button>
+        `,
+    };
 };
 
-const Template = (args: Args, { argTypes }: BaseArgType) => ({
-    props: Object.keys(argTypes),
-    components: { Button },
-    template: `
-        <Button v-bind="$props">
-            {{ text }}
-        </Button>`,
-});
+# Button
 
-export const Primary = Template.bind({});
+<Canvas>
+    <Story
+        name="Overview"
+        args={{
+            variant: 'primary',
+            text: 'Button text',
+            size: 'md',
+            isRounded: true,
+            isFullWidth: false,
+            outlined: false,
+            disabled: false,
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<ArgsTable story="Overview" />
