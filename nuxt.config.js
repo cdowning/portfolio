@@ -133,7 +133,7 @@ export default {
         ],
         // modules: false,
         modules: {
-            exclude: ['@nuxtjs/color-mode'],
+            exclude: ['@nuxtjs/svg-sprite'],
         },
     },
 

@@ -24,7 +24,7 @@ module.exports = {
         },
         fontFamily: {
             // https://tailwindcss.com/docs/font-family
-            sans: ['Poppins', '-apple-system', 'sans-serif'],
+            poppins: ['Poppins', '-apple-system', 'sans-serif'],
             lato: [
                 'Lato',
                 '-apple-system',

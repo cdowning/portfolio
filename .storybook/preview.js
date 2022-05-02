@@ -1,5 +1,3 @@
-// preview.ts
-
 export * from '~~/.nuxt-storybook/storybook/preview.js';
 
 import { themes } from '@storybook/theming';
@@ -13,23 +11,16 @@ export const parameters = {
         // Override the default dark theme
         dark: {
             ...themes.dark,
-            brandTitle: 'My custom storybook',
-            brandUrl: 'http://caitlinhawley.com',
-            brandImage: '../assets/images/logo/caitlin-hawley-dark.svg',
+            // brandTitle: 'My custom storybook',
+            // brandUrl: 'http://caitlinhawley.com',
+            // brandImage: '../assets/images/logo/caitlin-hawley-dark.svg',
         },
         // Override the default light theme
         light: {
             ...themes.normal,
-            brandTitle: 'My custom storybook',
-            brandUrl: 'http://caitlinhawley.com',
-            brandImage: '../assets/images/logo/caitlin-hawley-light.svg',
+            // brandTitle: 'My custom storybook',
+            // brandUrl: 'http://caitlinhawley.com',
+            // brandImage: '../assets/images/logo/caitlin-hawley-light.svg',
         },
     },
 };
-
-// // or global addParameters
-// export const parameters = {
-//     docs: {
-//         theme: themes.dark,
-//     },
-// };
