@@ -1,82 +1,104 @@
-import { defineComponent } from '@nuxtjs/composition-api';
+import {
+    defineComponent,
+    computed,
+    ref,
+    useContext,
+} from '@nuxtjs/composition-api';
 
 export default defineComponent({
     name: 'Index',
-    data() {
-        return {
-            items: [
-                {
-                    source: 'Unsplash',
-                    link: {
-                        url: 'caitlinhawley.com',
-                        name: 'Caitlin Hawley',
-                    },
-                    content:
-                        'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-                },
-                {
-                    header: 'This is a header',
-                    image: 'https://images.unsplash.com/photo-1650991768876-2a9a554f268c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60',
-                    source: 'Unsplash',
-                    link: {
-                        url: 'caitlinhawley.com',
-                        name: 'Caitlin Hawley',
-                    }, // isActionable
-                    content:
-                        'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-                    likes: 120,
-                },
-                {
-                    header: 'Another header 3',
-                    tag: 'web development',
-                    image: 'https://images.unsplash.com/photo-1651024954841-dbd597a403bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxM3x8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60',
-                    source: 'iStock',
-                    content:
-                        'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-                    likes: 20,
-                },
-                {
-                    header: 'Another header 4',
-                    tag: 'web development',
-                    content:
-                        'Chupa chups cotton candy sweet danish sesame snaps sweet roll caramels donut danish. Chocolate bar carrot cake liquorice gummies gummi bears gummies shortbread tiramisu cotton candy.',
-                    link: {
-                        url: 'google.com',
-                        name: 'Google',
-                    },
-                    likes: 3000,
-                },
-            ],
-            mobileMenu: false,
-            icon: 'menu',
-            switchColorTheme:
-                this.$colorMode.value === 'dark' ? 'light' : 'dark',
-        };
-    },
-    computed: {
-        colorIcon() {
+    setup() {
+        const {
+            $colorMode,
+            // $colorMode: { value },
+        } = useContext();
+
+        const mobileMenu = ref<boolean>(false);
+        const icon = ref<string>('menu');
+        const switchColorTheme = $colorMode.value === 'dark' ? 'light' : 'dark';
+
+        const cards = [
+            {
+                isImageExternal: false,
+                image: 'images/codepen/highlighter.png',
+                header: 'Highlighter Effect',
+                description: 'Highlighter effect with pure CSS',
+            },
+            {
+                isImageExternal: false,
+                image: 'images/codepen/skeleton-loading.png',
+                header: 'Skeleton Loading',
+                description:
+                    'Skeleton loading is a popular content loading feature. This skeleton loading utilizes CSS keyframes.',
+            },
+            {
+                image: 'images/codepen/loading-spinner.png',
+                header: 'Loading Spinner',
+                description: 'Loading spinner using CSS',
+            },
+            {
+                isImageExternal: true,
+                header: 'This is a header',
+                image: 'https://images.unsplash.com/photo-1650991768876-2a9a554f268c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60',
+                source: 'Unsplash',
+                link: {
+                    url: 'caitlinhawley.com',
+                    name: 'Caitlin Hawley',
+                }, // isActionable
+                description:
+                    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            },
+            {
+                header: 'This is a header',
+                source: 'Unsplash',
+                link: {
+                    url: 'caitlinhawley.com',
+                    name: 'Caitlin Hawley',
+                }, // isActionable
+                description:
+                    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            },
+        ];
+
+        // Computed
+        const colorIcon = computed<string>(() => {
             // If no theme is set in settings, defaults to 'light'
-            const icon = this.$colorMode.value === 'dark' ? 'sun' : 'moon';
+            const icon = $colorMode.value === 'dark' ? 'sun' : 'moon';
             return icon;
-        },
-        logoSrc() {
-            return `caitlin-hawley-${this.$colorMode.value}.svg`;
-        },
-        mobileIcon() {
-            return this.icon === 'menu' ? 'menu' : 'close';
-        },
-    },
-    mounted() {
-        console.log(this.$colorMode.value);
-    },
-    methods: {
-        onUpdateTheme() {
-            const color = this.$colorMode.value === 'dark' ? 'light' : 'dark';
-            this.$colorMode.value = color;
-        },
-        onMobileMenu() {
-            this.mobileMenu = !this.mobileMenu;
-            this.icon = this.icon === 'menu' ? 'close' : 'menu';
-        },
+        });
+        const logoSrc = computed<string>(() => {
+            return `caitlin-hawley-${$colorMode.value}.svg`;
+        });
+        const mobileIcon = computed<string>(() => {
+            return icon.value === 'menu' ? 'menu' : 'close';
+        });
+
+        // Methods
+        const onUpdateTheme = () => {
+            const color = $colorMode.value === 'dark' ? 'light' : 'dark';
+            $colorMode.value = color;
+        };
+        // Opens the mobile menu
+        const onMobileMenu = () => {
+            mobileMenu.value = !mobileMenu.value;
+            icon.value = icon.value === 'menu' ? 'close' : 'menu';
+        };
+
+        return {
+            // Data variables
+            mobileMenu,
+            icon,
+            switchColorTheme,
+            cards,
+
+            // Computed
+            colorIcon,
+            logoSrc,
+            mobileIcon,
+
+            // Methods
+            onUpdateTheme,
+            onMobileMenu,
+        };
     },
 });

@@ -11,13 +11,13 @@
         >
             <figure v-if="hasImageSlot" class="card-image">
                 <slot name="image" v-bind="{ source, image }">
-                    <img :src="image" />
+                    <img :src="imagePath" />
                 </slot>
             </figure>
             <figure v-else class="card-image card-image-placeholder">
                 <slot name="image" v-bind="{ source, image }">
                     <img
-                        :src="imagePath"
+                        :src="imagePlaceholderPath"
                         :class="[
                             orientation === 'landscape' ? 'w-8/12' : 'w-6/12',
                         ]"
@@ -106,12 +106,20 @@ export default defineComponent({
             return !!context.slots.image || !!data.value?.image;
         });
 
-        const imagePath = computed<string>(() => {
+        const imagePlaceholderPath = computed<string>(() => {
             const path =
                 props.imagePlaceholder ||
                 require('~/assets/images/global/code-tag.svg');
             return path;
         });
+        // Is this an external image or local?
+        const imagePath = computed<string>(() => {
+            const path = data.value?.isImageExternal
+                ? data.value?.image
+                : require(`~/assets/${data.value?.image}`);
+            return path;
+        });
+
         const cardClasses = computed<object>(() => {
             return [
                 'card-' + props.orientation,
@@ -132,12 +140,14 @@ export default defineComponent({
             header: data.value?.header,
             description: data.value?.description,
             image: data.value?.image,
+            externalImage: !!data.value?.isImageExternal,
             source: data.value?.source,
             link: data.value?.link,
+            imagePath,
 
             // Computed
             cardClasses,
-            imagePath,
+            imagePlaceholderPath,
         };
     },
 });

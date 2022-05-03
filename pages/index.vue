@@ -48,7 +48,7 @@
                     <Navigation
                         v-if="mobileMenu"
                         direction="vertical"
-                        class="menu mobile-menu flex flex-col items-center px-3 py-24 bg-primary"
+                        class="menu mobile-menu flex flex-col items-center px-3 py-24 bg-primary md:hidden"
                     >
                         <Icon
                             icon="close"
@@ -165,9 +165,10 @@
                 <h4 class="text-base">Experiments</h4>
                 <h3 class="text-lg">Code Playground</h3>
                 <p>Check out my open source playground.</p>
+                <CardGroup :items="cards" orientation="portrait"></CardGroup>
+                <hr />
 
                 <div class="grid pb-8 gap-4 grid-cols-card-portrait">
-                    <!-- <div class="grid md:grid-flow-col auto-cols-fr pb-8 gap-4"> -->
                     <a
                         href="https://codepen.io/cdowning/pen/vYprdXz"
                         target="_blank"
@@ -196,7 +197,10 @@
                             Highlighter effect with pure CSS.
                         </Card>
                     </a>
-                    <a to="https://codepen.io/cdowning/pen/oNpyqGK">
+                    <a
+                        href="https://codepen.io/cdowning/pen/oNpyqGK"
+                        target="_blank"
+                    >
                         <Card orientation="square">
                             <template #image>
                                 <img
@@ -207,33 +211,6 @@
                             Loading spinner with CSS.
                         </Card>
                     </a>
-
-                    <!-- <Card>
-                        <template #image>
-                            <img
-                                src="~/assets/images/global/computer-bg-square.jpg"
-                            />
-                        </template>
-                        <template #header>Hello Header</template>
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and
-                        scrambled it to make a type specimen book.
-                    </Card>
-                    <Card>
-                        <template #image>
-                            <img
-                                src="~/assets/images/global/computer-bg-square.jpg"
-                            />
-                        </template>
-                        <template #header>Hello Header</template>
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and
-                        scrambled it to make a type specimen book.
-                    </Card> -->
                 </div>
                 <div class="block float-right">
                     <Button
@@ -275,5 +252,5 @@
     </div>
 </template>
 
-<script lang="ts" src="./ts/prototype.ts"></script>
+<script lang="ts" src="./ts/index.ts"></script>
 <!--<style lang="scss" src="./scss/prototype.scss" scoped></style>-->
