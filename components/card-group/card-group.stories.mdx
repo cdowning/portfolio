@@ -49,12 +49,8 @@ export const items = [
     },
 ];
 
-import Card from './card.vue';
-import CardGroup from '../card-group/card-group.vue';
-
-<!-- Refer to their wonderful documentation: https://material.io/components/cards#anatomy -->
-<!-- https://mui.com/material-ui/react-card/ -->
-<!-- Add a divider feature and/or an expand feature? -->
+import Card from '../card/card.vue';
+import CardGroup from './card-group.vue';
 
 <!--<Meta title="Components/Card" component={Card} subcomponents={{ CardGroup }} />-->
 
@@ -63,15 +59,28 @@ import CardGroup from '../card-group/card-group.vue';
     component={(Card, CardGroup)} /> -->
 
 <Meta
-    title="Components/Card"
+    title="Components/Card Group"
     decorators={[
         () => ({
-            template: '<div style="height: 350px;"><story /></div>',
+            template:
+                '<div style="height: 300px; width: 100%;"><story /></div>',
         }),
     ]}
-    component={Card}
+    component={(CardGroup, Card)}
     argTypes={{
-        orientation: {
+        // Card Group
+        items: {
+            description: 'Text in header of card',
+            table: {
+                category: 'Card Group',
+                type: { summary: 'array' },
+                defaultValue: { summary: '' },
+            },
+            control: {
+                type: 'object',
+            },
+        },
+        groupOrientation: {
             description: 'Orientation of a group of cards',
             options: ['portrait', 'landscape', 'square'],
             table: {
@@ -83,7 +92,19 @@ import CardGroup from '../card-group/card-group.vue';
                 type: 'select',
             },
         },
-        isRounded: {
+        gap: {
+            description: 'Space between cards',
+            options: ['gap-4', 'gap-8'],
+            table: {
+                category: 'Card Group',
+                type: { summary: 'string' },
+                defaultValue: { summary: 'gap-4' },
+            },
+            control: {
+                type: 'select',
+            },
+        },
+        isGroupRounded: {
             description: 'Defines if the card should have round edges.',
             table: {
                 category: 'Card Group',
@@ -94,33 +115,18 @@ import CardGroup from '../card-group/card-group.vue';
                 type: 'boolean',
             },
         },
-        showBorder: {
-            description: 'Defines if a border should display in the card',
-            table: {
-                category: 'Card',
-                type: { summary: 'boolean' },
-                defaultValue: { summary: 'false' },
-            },
-            control: {
-                type: 'boolean',
-            },
-        },
     }}
 />
 
-export const Template = (args, { argTypes }) => {
-    return {
-        props: Object.keys(argTypes),
-        components: { Card },
-        template: `<div>
-            <Card v-bind="$props">
-                <template #header>
-                    <h3 class="text-lg">Header (Simple)</h3>
-                </template>
-            </Card>
-        </div>`,
-    };
-};
+<!-- Scoped -->
+
+export const Template = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { CardGroup, Card },
+    template: `<CardGroup v-bind="$props">
+            <Card v-bind="$props" />
+        </CardGroup>`,
+});
 export const NamedSlots = (args, { argTypes }) => {
     return {
         props: Object.keys(argTypes),
@@ -239,9 +245,9 @@ export const NamedSlots = (args, { argTypes }) => {
     <Story
         name="Overview"
         args={{
-            orientation: 'landscape',
-            showBorder: false,
-            isRounded: false,
+            items: items,
+            gap: 'gap-4',
+            groupOrientation: 'portrait',
         }}
     >
         {Template.bind({})}
@@ -249,3 +255,15 @@ export const NamedSlots = (args, { argTypes }) => {
 </Canvas>
 
 <ArgsTable story="Overview" />
+
+<Canvas>
+    <Story
+        name="Named Slots"
+        args={{
+            groupOrientation: 'portrait',
+            isGroupRounded: false,
+        }}
+    >
+        {NamedSlots.bind({})}
+    </Story>
+</Canvas>

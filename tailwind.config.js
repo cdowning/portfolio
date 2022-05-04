@@ -61,6 +61,12 @@ module.exports = {
                 primary: 'var(--text-primary)',
                 secondary: 'var(--text-secondary)',
             },
+            borderColor: {
+                card: {
+                    primary: 'var(--card-border-primary)',
+                    secondary: 'var(--card-border-secondary)',
+                },
+            },
             gridTemplateColumns: {
                 // https://bryanlrobinson.com/blog/howto-css-grid-layout-to-make-a-simple-fluid-card-grid/
                 'card-portrait': 'repeat(auto-fit, minmax(320px, 1fr))',

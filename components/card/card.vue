@@ -1,5 +1,5 @@
 <template>
-    <div :class="['card flex', cardClasses]">
+    <div :class="['card flex border-card-primary border-solid', cardClasses]">
         <!-- Show placeholder if no image? -->
         <div
             v-if="showImagePlaceholder"
@@ -26,10 +26,10 @@
             </figure>
         </div>
 
-        <div class="card-content flex flex-col">
+        <div class="card-content">
             <div class="card-details">
                 <slot name="header" v-bind="{ header }">
-                    <h3 class="text-lg">
+                    <h3 class="text-lg truncate" style="min-width: 0">
                         {{ header }}
                     </h3>
                 </slot>
@@ -37,18 +37,19 @@
                     <p>{{ description }}</p>
                 </slot>
             </div>
-            <slot name="footer" v-bind="{ link }">
-                <Button
-                    v-if="link"
-                    variant="primary"
-                    size="sm"
-                    outlined
-                    is-full-width
-                    class="mb-2"
-                >
-                    {{ link.name }}
-                </Button>
-                <!-- <a
+            <div v-if="hasFooterSlot" class="card-footer">
+                <slot name="footer" v-bind="{ link }">
+                    <Button
+                        v-if="link"
+                        variant="primary"
+                        size="sm"
+                        outlined
+                        is-full-width
+                        @click="redirectTo(link.url)"
+                    >
+                        {{ link.name }}
+                    </Button>
+                    <!-- <a
                 v-if="link"
                 class="inline-block"
                 :href="link.url"
@@ -56,7 +57,8 @@
             >
                 {{ link.name }}
             </a> -->
-            </slot>
+                </slot>
+            </div>
         </div>
     </div>
 </template>
@@ -87,6 +89,10 @@ export default defineComponent({
             type: Boolean,
             default: false,
         },
+        showBorder: {
+            type: Boolean,
+            default: false,
+        },
         // Boolean for imagePlaceholder
         // Ability to customize placeholder - but have default
         imagePlaceholder: {
@@ -104,6 +110,9 @@ export default defineComponent({
 
         const hasImageSlot = computed<boolean>(() => {
             return !!context.slots.image || !!data.value?.image;
+        });
+        const hasFooterSlot = computed<boolean>(() => {
+            return !!context.slots.footer || !!data.value?.link;
         });
 
         const imagePlaceholderPath = computed<string>(() => {
@@ -129,13 +138,24 @@ export default defineComponent({
                         props.orientation === 'square',
                 },
                 { 'rounded-lg': !!props.isRounded },
+                {
+                    [props.orientation === 'landscape'
+                        ? 'border-r-8'
+                        : 'border-b-8']: !!props.showBorder,
+                },
+                // props.orientation === 'landscape' ? 'border-r-8' : 'border-b-8',
                 // { [CARD_CLASS_PREFIX + props.shape]: !!props.shape },
             ];
         });
 
+        const redirectTo = (path: string) => {
+            window.open(path, '_blank');
+        };
+
         return {
             useData,
             hasImageSlot,
+            hasFooterSlot,
 
             header: data.value?.header,
             description: data.value?.description,
@@ -148,6 +168,9 @@ export default defineComponent({
             // Computed
             cardClasses,
             imagePlaceholderPath,
+
+            // Methods
+            redirectTo,
         };
     },
 });

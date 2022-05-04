@@ -1,3 +1,5 @@
+import { themes } from '@storybook/theming';
+
 export default {
     // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
     ssr: false,
@@ -128,9 +130,30 @@ export default {
             '~/stories/*.stories.mdx',
         ],
         addons: [
-            // 'storybook-dark-mode',
+            'storybook-dark-mode',
             // '@storybook/addon-a11y',
         ],
+        parameters: {
+            darkMode: {
+                current: 'light',
+                classTarget: 'html',
+                darkClass: 'dark-mode',
+                stylePreview: true,
+                dark: {
+                    ...themes.dark,
+                    brandTitle: 'My custom storybook',
+                    brandUrl: 'http://caitlinhawley.com',
+                    brandImage: '/caitlin-hawley-dark.svg',
+                },
+                // Override the default light theme
+                light: {
+                    ...themes.normal,
+                    brandTitle: 'My custom storybook',
+                    brandUrl: 'http://caitlinhawley.com',
+                    brandImage: '/caitlin-hawley-light.svg',
+                },
+            },
+        },
         // modules: false,
         modules: {
             exclude: ['@nuxtjs/svg-sprite'],

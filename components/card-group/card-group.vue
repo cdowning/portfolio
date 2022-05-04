@@ -5,8 +5,8 @@
             v-for="(item, index) in items"
             :key="index"
             :item="item"
-            :orientation="orientation"
-            :is-rounded="isRounded"
+            :orientation="groupOrientation"
+            :is-rounded="isGroupRounded"
         >
         </Card>
     </div>
@@ -34,22 +34,18 @@ export default defineComponent({
             default: 'gap-4',
         },
         // This should probably be on the card
-        orientation: {
+        groupOrientation: {
             type: String,
             default: 'portrait',
         },
-        isRounded: {
+        isGroupRounded: {
             type: Boolean,
             default: false,
         },
     },
     setup(props, context) {
         const cardGroupClasses = computed<object>(() => {
-            return [
-                CARDS_CLASS_PREFIX + props.orientation,
-                props.gap,
-                { 'rounded-lg': !!props.isRounded },
-            ];
+            return [CARDS_CLASS_PREFIX + props.groupOrientation, props.gap];
         });
 
         return { cardGroupClasses };

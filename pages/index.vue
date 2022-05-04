@@ -165,53 +165,9 @@
                 <h4 class="text-base">Experiments</h4>
                 <h3 class="text-lg">Code Playground</h3>
                 <p>Check out my open source playground.</p>
-                <CardGroup :items="cards" orientation="portrait"></CardGroup>
-                <hr />
 
-                <div class="grid pb-8 gap-4 grid-cols-card-portrait">
-                    <a
-                        href="https://codepen.io/cdowning/pen/vYprdXz"
-                        target="_blank"
-                    >
-                        <Card orientation="square">
-                            <template #image>
-                                <img
-                                    src="~/assets/images/codepen/highlighter.png"
-                                />
-                            </template>
-                            <template #header>Highlighter Effect</template>
-                            Highlighter effect with pure CSS.
-                        </Card>
-                    </a>
-                    <a
-                        href="https://codepen.io/cdowning/pen/dEVWKb"
-                        target="_blank"
-                    >
-                        <Card orientation="square">
-                            <template #image>
-                                <img
-                                    src="~/assets/images/codepen/skeleton-loading.png"
-                                />
-                            </template>
-                            <template #header>Skeleton Loading</template>
-                            Highlighter effect with pure CSS.
-                        </Card>
-                    </a>
-                    <a
-                        href="https://codepen.io/cdowning/pen/oNpyqGK"
-                        target="_blank"
-                    >
-                        <Card orientation="square">
-                            <template #image>
-                                <img
-                                    src="~/assets/images/codepen/loading-spinner.png"
-                                />
-                            </template>
-                            <template #header>Loading Spinner</template>
-                            Loading spinner with CSS.
-                        </Card>
-                    </a>
-                </div>
+                <CardGroup :items="cards" orientation="portrait"></CardGroup>
+
                 <div class="block float-right">
                     <Button
                         type="link"

@@ -23,6 +23,10 @@ export default defineComponent({
                 image: 'images/codepen/highlighter.png',
                 header: 'Highlighter Effect',
                 description: 'Highlighter effect with pure CSS',
+                link: {
+                    url: 'https://codepen.io/cdowning/pen/vYprdXz',
+                    name: 'View pen',
+                },
             },
             {
                 isImageExternal: false,
@@ -30,34 +34,42 @@ export default defineComponent({
                 header: 'Skeleton Loading',
                 description:
                     'Skeleton loading is a popular content loading feature. This skeleton loading utilizes CSS keyframes.',
+                link: {
+                    url: 'https://codepen.io/cdowning/pen/dEVWKb',
+                    name: 'View Pen',
+                },
             },
             {
                 image: 'images/codepen/loading-spinner.png',
                 header: 'Loading Spinner',
                 description: 'Loading spinner using CSS',
-            },
-            {
-                isImageExternal: true,
-                header: 'This is a header',
-                image: 'https://images.unsplash.com/photo-1650991768876-2a9a554f268c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60',
-                source: 'Unsplash',
                 link: {
-                    url: 'caitlinhawley.com',
-                    name: 'Caitlin Hawley',
-                }, // isActionable
-                description:
-                    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                    url: 'https://codepen.io/cdowning/pen/oNpyqGK',
+                    name: 'View pen',
+                },
             },
-            {
-                header: 'This is a header',
-                source: 'Unsplash',
-                link: {
-                    url: 'caitlinhawley.com',
-                    name: 'Caitlin Hawley',
-                }, // isActionable
-                description:
-                    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-            },
+            // {
+            //     isImageExternal: true,
+            //     header: 'This is a very long card header',
+            //     image: 'https://images.unsplash.com/photo-1650991768876-2a9a554f268c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60',
+            //     source: 'Unsplash',
+            //     link: {
+            //         url: 'caitlinhawley.com',
+            //         name: 'Caitlin Hawley',
+            //     },
+            //     description:
+            //         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            // },
+            // {
+            //     header: 'This is a header',
+            //     source: 'Unsplash',
+            //     link: {
+            //         url: 'caitlinhawley.com',
+            //         name: 'Caitlin Hawley',
+            //     }, // isActionable
+            //     description:
+            //         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            // },
         ];
 
         // Computed

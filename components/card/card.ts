@@ -22,6 +22,10 @@ const Card = defineComponent({
             type: String,
             default: 'portrait',
         },
+        showBorder: {
+            type: Boolean,
+            default: false,
+        },
     },
     setup(props, context) {
         const cardClasses = computed(function () {
